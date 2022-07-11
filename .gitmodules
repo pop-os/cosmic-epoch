@@ -1,0 +1,21 @@
+[submodule "cosmic-session"]
+	path = cosmic-session
+	url = https://github.com/pop-os/cosmic-session
+[submodule "cosmic-comp"]
+	path = cosmic-comp
+	url = https://github.com/pop-os/cosmic-comp
+[submodule "cosmic-panel"]
+	path = cosmic-panel
+	url = https://github.com/pop-os/cosmic-panel
+[submodule "cosmic-applets"]
+	path = cosmic-applets
+	url = https://github.com/pop-os/cosmic-applets
+[submodule "cosmic-applibrary"]
+	path = cosmic-applibrary
+	url = https://github.com/pop-os/cosmic-applibrary
+[submodule "cosmic-launcher"]
+	path = cosmic-launcher
+	url = https://github.com/pop-os/cosmic-launcher
+[submodule "simple-wrapper"]
+	path = simple-wrapper
+	url = https://github.com/pop-os/simple-wrapper
