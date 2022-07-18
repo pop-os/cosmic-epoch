@@ -37,7 +37,7 @@ optionally (though the build-system might currently require these libraries):
 - pop-launcher
 
 ```bash
-sudo apt install libwayland-dev libgtk-4-dev libgl1-mesa-dev libseat-dev libxkbcommon-dev libinput-dev udev dbus libsystemd-dev libpulse-dev pop-launcher
+sudo apt install libwayland-dev libgtk-4-dev libgbm-dev libseat-dev libxkbcommon-dev libinput-dev udev dbus libsystemd-dev libpulse-dev pop-launcher
 ```
 
 ### Testing
