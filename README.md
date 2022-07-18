@@ -30,7 +30,7 @@ The Cosmic desktop environment requires a few dependencies:
 - udev
 - gtk4
 - dbus
-- libsdl2
+- libgbm
 
 optionally (though the build-system might currently require these libraries):
 - libsystemd
