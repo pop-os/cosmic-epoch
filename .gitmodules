@@ -19,3 +19,9 @@
 [submodule "simple-wrapper"]
 	path = simple-wrapper
 	url = https://github.com/pop-os/simple-wrapper
+[submodule "cosmic-applet-host"]
+	path = cosmic-applet-host
+	url = https://github.com/pop-os/cosmic-applet-host
+[submodule "cosmic-settings-daemon"]
+	path = cosmic-settings-daemon
+	url = https://github.com/pop-os/cosmic-settings-daemon

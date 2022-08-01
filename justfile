@@ -3,22 +3,24 @@ make := `which make`
 
 build:
     {{ just }} cosmic-applets/all
+    {{ make }} -C cosmic-applet-host all
     {{ just }} cosmic-applibrary/all
     {{ make }} -C cosmic-comp all
     {{ just }} cosmic-launcher/all
     {{ make }} -C cosmic-panel all
+    {{ make }} -C cosmic-settings-daemon all
     {{ just }} cosmic-session/all
-    {{ make }} -C simple-wrapper all
 
 sysext dir=`echo $(pwd)/cosmic-sysext` version=("nightly-" + `git rev-parse --short HEAD`): build && (_extension_release dir version)
     @mkdir -p {{dir}}/usr/lib/extension-release.d/
     {{ just }} rootdir={{dir}} cosmic-applets/install
+    {{ make }} -C cosmic-applet-host install DESTDIR={{dir}} prefix=/usr
     {{ just }} rootdir={{dir}} cosmic-applibrary/install
     {{ make }} -C cosmic-comp install DESTDIR={{dir}}
     {{ just }} rootdir={{dir}} cosmic-launcher/install
     {{ make }} -C cosmic-panel install DESTDIR={{dir}} prefix=/usr
+    {{ make }} -C cosmic-settings-daemon install DESTDIR={{dir}} prefix=/usr
     {{ just }} rootdir={{dir}} cosmic-session/install
-    {{ make }} -C simple-wrapper install DESTDIR={{dir}} prefix=/usr
 
 _extension_release dir version:
     #!/usr/bin/env sh
@@ -32,9 +34,10 @@ _extension_release dir version:
 
 clean:
     rm -rf cosmic-applets/target
+    rm -rf cosmic-applet-host/target
     rm -rf cosmic-applibrary/target
     rm -rf cosmic-comp/target
     rm -rf cosmic-launcher/target
     rm -rf cosmic-panel/target
+    rm -rf cosmic-settings-daemon/target
     rm -rf cosmic-session/target
-    rm -rf simple-wrapper/target
