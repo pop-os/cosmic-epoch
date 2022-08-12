@@ -25,3 +25,6 @@
 [submodule "cosmic-settings-daemon"]
 	path = cosmic-settings-daemon
 	url = https://github.com/pop-os/cosmic-settings-daemon
+[submodule "xdg-desktop-portal-cosmic"]
+	path = xdg-desktop-portal-cosmic
+	url = https://github.com/pop-os/xdg-desktop-portal-cosmic.git
