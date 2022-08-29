@@ -28,3 +28,6 @@
 [submodule "xdg-desktop-portal-cosmic"]
 	path = xdg-desktop-portal-cosmic
 	url = https://github.com/pop-os/xdg-desktop-portal-cosmic.git
+[submodule "cosmic-osd"]
+	path = cosmic-osd
+	url = https://github.com/pop-os/cosmic-osd.git
