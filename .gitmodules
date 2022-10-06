@@ -31,3 +31,12 @@
 [submodule "cosmic-osd"]
 	path = cosmic-osd
 	url = https://github.com/pop-os/cosmic-osd.git
+[submodule "cosmic-bg"]
+	path = cosmic-bg
+	url = https://github.com/pop-os/cosmic-bg.git
+[submodule "user-color-editor"]
+	path = user-color-editor
+	url = https://github.com/pop-os/user-color-editor.git
+[submodule "iced-workspaces-applet"]
+	path = iced-workspaces-applet
+	url = https://github.com/pop-os/iced-workspaces-applet.git
