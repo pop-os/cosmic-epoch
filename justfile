@@ -3,8 +3,9 @@ make := `which make`
 meson := `which meson`
 
 _meson_build dir:
+    -rm -rf {{dir}}_build
     mkdir -p {{dir}}_build
-    {{ meson }} setup --reconfigure {{dir}}_build {{dir}} --prefix=/usr -Dvendor=false
+    {{ meson }} setup {{dir}}_build {{dir}} --prefix=/usr -Dvendor=false
     {{ meson }} compile -C {{dir}}_build
 
 _meson_install dir destdir:
@@ -63,4 +64,6 @@ clean:
     rm -rf cosmic-osd/target
     rm -rf cosmic-settings-daemon/target
     rm -rf cosmic-session/target
+    rm -rf iced-workspaces-applet_build
+    rm -rf user-color-editor_build
     rm -rf xdg-desktop-portal-cosmic/target
