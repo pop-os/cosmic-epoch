@@ -40,3 +40,6 @@
 [submodule "iced-workspaces-applet"]
 	path = iced-workspaces-applet
 	url = https://github.com/pop-os/iced-workspaces-applet.git
+[submodule "wayland-proxy-virtwl"]
+	path = wayland-proxy-virtwl
+	url = https://github.com/talex5/wayland-proxy-virtwl

@@ -1,0 +1,7 @@
+[Unit]
+Description=Wayland-proxy-virtwl
+After=cosmic-session.target
+WantedBy=cosmic-session.target
+
+[Service]
+ExecStart=/var/bin/wayland-proxy-virtwl --wayland-display wayland-0 --x-display=0 --xrdb Xft.dpi:150 --x-unscale=2
