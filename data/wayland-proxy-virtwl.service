@@ -1,7 +1,6 @@
 [Unit]
 Description=Wayland-proxy-virtwl
 After=cosmic-session.target
-WantedBy=cosmic-session.target
 
 [Service]
 ExecStart=/usr/bin/wayland-proxy-virtwl --wayland-display wayland-virtwl
