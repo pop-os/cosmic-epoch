@@ -44,10 +44,12 @@ sysext dir=`echo $(pwd)/cosmic-sysext` version=("nightly-" + `git rev-parse --sh
     {{ just }} _meson_install iced-workspaces-applet {{dir}}
     {{ just }} _meson_install user-color-editor {{dir}}
     {{ make }} -C xdg-desktop-portal-cosmic install DESTDIR={{dir}} prefix=/usr
-    {{ just }} rootdir={{dir}} cosmic-session/install
     if test {{x}} = 1; then
         install -Dm0644 data/wayland-proxy-virtwl.service {{dir}}/usr/lib/systemd/user/wayland-proxy-virtwl.service
         opam install ./wayland-proxy-virtwl --destdir={{dir}}/usr
+        {{ just }} x=1 rootdir={{dir}} cosmic-session/install
+    else
+        {{ just }} rootdir={{dir}} cosmic-session/install
     fi
 _extension_release dir version:
     #!/usr/bin/env sh
