@@ -57,6 +57,13 @@ It also requires the previously mentioned libraries/dependencies at runtime to b
 
 It is thus no proper method for long term deployment.
 
+### Experimental X Support
+
+With [opam installed](https://opam.ocaml.org/doc/Install.html) X support using wayland-proxy-virtwl can be optionally enabled during installation. When building, use `just x=1 sysext` and after refreshing with `sudo systemd-sysext refresh`, run
+```
+systemctl --user daemon-reload
+systemctl --user enable --now wayland-proxy-virtwl
+```
 ### Packaging
 
 Cosmic DE is packaged for Pop!_OS for reference look at the `debian` folders in the projects repositories.
