@@ -59,7 +59,7 @@ It is thus no proper method for long term deployment.
 
 ### Experimental X Support
 
-X support using wayland-proxy-virtwl can be optionally enabled during installation. When building, use `just x=1 sysext` and after refreshing with `sudo systemd-sysext refresh`, run
+With [opam installed](https://opam.ocaml.org/doc/Install.html) X support using wayland-proxy-virtwl can be optionally enabled during installation. When building, use `just x=1 sysext` and after refreshing with `sudo systemd-sysext refresh`, run
 ```
 systemctl --user daemon-reload
 systemctl --user enable --now wayland-proxy-virtwl

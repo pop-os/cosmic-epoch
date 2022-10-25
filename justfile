@@ -4,8 +4,6 @@ make := `which make`
 meson := `which meson`
 x := '0'
 
-systemddir := '/usr/lib/systemd/user'
-
 _meson_build dir:
     -rm -rf {{dir}}_build
     mkdir -p {{dir}}_build
