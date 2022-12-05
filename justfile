@@ -15,11 +15,11 @@ _meson_install dir destdir:
 
 build:
     mkdir -p build
-    {{ just }} cosmic-applets/all
-    {{ just }} cosmic-applibrary/all
+    {{ just }} cosmic-applets/build
+    {{ just }} _meson_build cosmic-applibrary
     {{ just }} _meson_build cosmic-bg
     {{ make }} -C cosmic-comp all
-    {{ just }} cosmic-launcher/all
+    {{ just }} _meson_build cosmic-launcher
     {{ make }} -C cosmic-osd all
     {{ make }} -C cosmic-panel all
     {{ make }} -C cosmic-settings-daemon all
@@ -30,10 +30,10 @@ sysext dir=`echo $(pwd)/cosmic-sysext` version=("nightly-" + `git rev-parse --sh
     #!/usr/bin/env sh
     mkdir -p {{dir}}/usr/lib/extension-release.d/
     {{ just }} rootdir={{dir}} cosmic-applets/install
-    {{ just }} rootdir={{dir}} cosmic-applibrary/install
+    {{ just }} _meson_install cosmic-applibrary {{dir}}
     {{ just }} _meson_install cosmic-bg {{dir}}
     {{ make }} -C cosmic-comp install DESTDIR={{dir}}
-    {{ just }} rootdir={{dir}} cosmic-launcher/install
+    {{ just }} _meson_install cosmic-launcher {{dir}}
     {{ make }} -C cosmic-osd install DESTDIR={{dir}} prefix=/usr
     {{ make }} -C cosmic-panel install DESTDIR={{dir}} prefix=/usr
     {{ make }} -C cosmic-settings-daemon install DESTDIR={{dir}} prefix=/usr
