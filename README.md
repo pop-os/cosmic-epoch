@@ -48,7 +48,7 @@ cd cosmic-epoch
 just sysext
 ```
 
-This will create a system-extension inside `cosmic-sysext`, that you can move (without renaming!) into e.g. `/var/lib/extensions`.
+This will create a system-extension called `cosmic-sysext`, that you can move (without renaming!) into e.g. `/var/lib/extensions`.
 After starting systemd-sysext.service (`sudo systemctl enable --now systemd-sysext`) and refreshing (`sudo systemd-sysext refresh`) or rebooting
 *COSMIC* will be an available option in your favorite display manager.
 
