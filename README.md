@@ -39,6 +39,10 @@ optionally (though the build-system might currently require these libraries):
 - libpulse
 - pop-launcher
 
+```bash
+sudo apt install libwayland-dev libgtk-4-dev libgbm-dev libseat-dev libxkbcommon-dev libinput-dev udev dbus libsystemd-dev libpulse-dev pop-launcher
+```
+
 ### Testing
 
 The easiest way to test Cosmic DE currently is by building a systemd system extension (see `man systemd-sysext`).
