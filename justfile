@@ -19,7 +19,7 @@ build:
     {{ just }} _meson_build cosmic-applibrary
     {{ just }} _meson_build cosmic-bg
     {{ make }} -C cosmic-comp all
-    {{ just }} _meson_build cosmic-launcher
+    {{ just }} cosmic-launcher/build-release
     {{ make }} -C cosmic-osd all
     {{ make }} -C cosmic-panel all
     {{ make }} -C cosmic-settings-daemon all
