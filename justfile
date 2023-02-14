@@ -33,7 +33,7 @@ sysext dir=`echo $(pwd)/cosmic-sysext` version=("nightly-" + `git rev-parse --sh
     {{ just }} _meson_install cosmic-applibrary {{dir}}
     {{ just }} _meson_install cosmic-bg {{dir}}
     {{ make }} -C cosmic-comp install DESTDIR={{dir}}
-    {{ just }} _meson_install cosmic-launcher {{dir}}
+    {{ just }} just install cosmic-launcher {{dir}}
     {{ make }} -C cosmic-osd install DESTDIR={{dir}} prefix=/usr
     {{ make }} -C cosmic-panel install DESTDIR={{dir}} prefix=/usr
     {{ make }} -C cosmic-settings-daemon install DESTDIR={{dir}} prefix=/usr
