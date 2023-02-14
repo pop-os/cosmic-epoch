@@ -1,0 +1,46 @@
+# Use Arch to test build outside of Ubuntu/Pop.
+#
+# Tests with recent version of dependencies. Another testson a different
+# distro could be used to test for lowest supported.
+#
+# A minimal image should also help to confirm what dependencies are needed.
+
+name: CI
+
+on:
+  pull_request:
+  push:
+  schedule:
+    - cron: '0 7 * * *' # Midnight MST daily
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    container:
+      image: archlinux:latest
+    steps:
+    - run: >
+        pacman --noconfirm -Syu
+        base-devel
+        cargo
+        clang
+        desktop-file-utils
+        git
+        gtk4
+        just
+        libinput
+        libxkbcommon
+        llvm
+        mesa
+        meson
+        pipewire
+        pulseaudio
+        seatd
+        wayland
+    - uses: actions/checkout@v3
+      with:
+        submodules: true
+    # Safe directory behavior seems to have issues with `container:`
+    # https://github.com/actions/checkout/issues/915
+    - run: git config --global --add safe.directory '*'
+    - run: just sysext
