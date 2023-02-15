@@ -31,6 +31,3 @@
 [submodule "cosmic-bg"]
 	path = cosmic-bg
 	url = https://github.com/pop-os/cosmic-bg.git
-[submodule "wayland-proxy-virtwl"]
-	path = wayland-proxy-virtwl
-	url = https://github.com/talex5/wayland-proxy-virtwl
