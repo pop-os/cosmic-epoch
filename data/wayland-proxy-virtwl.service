@@ -1,9 +1,0 @@
-[Unit]
-Description=Wayland-proxy-virtwl
-After=cosmic-session.target
-
-[Service]
-ExecStart=/usr/bin/wayland-proxy-virtwl --wayland-display wayland-virtwl --x-display=0
-
-[Install]
-WantedBy=cosmic-session.target

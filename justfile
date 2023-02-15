@@ -2,7 +2,6 @@ set dotenv-load
 just := just_executable()
 make := `which make`
 meson := `which meson`
-x := '0'
 
 _meson_build dir:
     -rm -rf {{dir}}_build
@@ -27,7 +26,6 @@ build:
     {{ make }} -C xdg-desktop-portal-cosmic all
 
 sysext dir=`echo $(pwd)/cosmic-sysext` version=("nightly-" + `git rev-parse --short HEAD`): build && (_extension_release dir version)
-    #!/usr/bin/env sh
     mkdir -p {{dir}}/usr/lib/extension-release.d/
     {{ just }} rootdir={{dir}} cosmic-applets/install
     {{ just }} _meson_install cosmic-applibrary {{dir}}
@@ -38,13 +36,7 @@ sysext dir=`echo $(pwd)/cosmic-sysext` version=("nightly-" + `git rev-parse --sh
     {{ make }} -C cosmic-panel install DESTDIR={{dir}} prefix=/usr
     {{ make }} -C cosmic-settings-daemon install DESTDIR={{dir}} prefix=/usr
     {{ make }} -C xdg-desktop-portal-cosmic install DESTDIR={{dir}} prefix=/usr
-    if test {{x}} = 1; then
-        install -Dm0644 data/wayland-proxy-virtwl.service {{dir}}/usr/lib/systemd/user/wayland-proxy-virtwl.service
-        opam install ./wayland-proxy-virtwl --destdir={{dir}}/usr
-        {{ just }} x=1 rootdir={{dir}} cosmic-session/install
-    else
-        {{ just }} rootdir={{dir}} cosmic-session/install
-    fi
+    {{ just }} rootdir={{dir}} cosmic-session/install
 _extension_release dir version:
     #!/usr/bin/env sh
     cat >{{dir}}/usr/lib/extension-release.d/extension-release.cosmic-sysext <<EOF
