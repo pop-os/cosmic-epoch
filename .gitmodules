@@ -19,6 +19,9 @@
 [submodule "simple-wrapper"]
 	path = simple-wrapper
 	url = https://github.com/pop-os/simple-wrapper
+[submodule "cosmic-settings"]
+        path = cosmic-settings
+        url = https://github.com/pop-os/cosmic-settings
 [submodule "cosmic-settings-daemon"]
 	path = cosmic-settings-daemon
 	url = https://github.com/pop-os/cosmic-settings-daemon
