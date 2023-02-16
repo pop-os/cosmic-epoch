@@ -16,7 +16,7 @@ build:
     mkdir -p build
     {{ just }} cosmic-applets/build
     {{ just }} _meson_build cosmic-applibrary
-    {{ just }} _meson_build cosmic-bg
+    {{ just }} cosmic-bg/build-release
     {{ make }} -C cosmic-comp all
     {{ just }} cosmic-launcher/build-release
     {{ make }} -C cosmic-osd all
@@ -29,7 +29,7 @@ sysext dir=`echo $(pwd)/cosmic-sysext` version=("nightly-" + `git rev-parse --sh
     mkdir -p {{dir}}/usr/lib/extension-release.d/
     {{ just }} rootdir={{dir}} cosmic-applets/install
     {{ just }} _meson_install cosmic-applibrary {{dir}}
-    {{ just }} _meson_install cosmic-bg {{dir}}
+    {{ just }} rootdir={{dir}} cosmic-bg/install
     {{ make }} -C cosmic-comp install DESTDIR={{dir}}
     {{ just }} rootdir={{dir}} cosmic-launcher/install
     {{ make }} -C cosmic-osd install DESTDIR={{dir}} prefix=/usr
@@ -50,7 +50,7 @@ _extension_release dir version:
 clean:
     rm -rf cosmic-applets/target
     rm -rf cosmic-applibrary/target
-    rm -rf cosmic-bg_build
+    rm -rf cosmic-bg/target
     rm -rf cosmic-comp/target
     rm -rf cosmic-launcher/target
     rm -rf cosmic-panel/target
