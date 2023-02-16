@@ -35,7 +35,7 @@ sysext dir=`echo $(pwd)/cosmic-sysext` version=("nightly-" + `git rev-parse --sh
     {{ just }} rootdir={{dir}} cosmic-launcher/install
     {{ make }} -C cosmic-osd install DESTDIR={{dir}} prefix=/usr
     {{ make }} -C cosmic-panel install DESTDIR={{dir}} prefix=/usr
-    {{ just }} rootdir={{dir}} cosmic-launcher/install
+    {{ just }} rootdir={{dir}} cosmic-settings/install
     {{ make }} -C cosmic-settings-daemon install DESTDIR={{dir}} prefix=/usr
     {{ make }} -C xdg-desktop-portal-cosmic install DESTDIR={{dir}} prefix=/usr
     {{ just }} rootdir={{dir}} cosmic-session/install
