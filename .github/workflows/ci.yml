@@ -37,6 +37,10 @@ jobs:
         pulseaudio
         seatd
         wayland
+        lld
+        expat
+        fontconfig
+        freetype2
     - uses: actions/checkout@v3
       with:
         submodules: true
