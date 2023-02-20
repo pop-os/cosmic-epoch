@@ -38,7 +38,11 @@ optionally (though the build-system might currently require these libraries):
 - libsystemd
 - libpulse
 - pop-launcher
-
+- libexpat1-dev,
+- libfontconfig-dev,
+- libfreetype-dev,
+- lld,
+ 
 ### Testing
 
 The easiest way to test Cosmic DE currently is by building a systemd system extension (see `man systemd-sysext`).
