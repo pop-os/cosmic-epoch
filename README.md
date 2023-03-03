@@ -25,23 +25,25 @@ The COSMIC desktop environment requires a few dependencies:
 
 - [just](https://github.com/casey/just)
 - rustc
-- libwayland-dev
+- libwayland
 - mesa (or third-party libEGL/libGL implementations, though interfacing with mesa's libglvnd is generally recommended).
-- libseat-dev
-- libxkbcommon-dev
-- libinput-dev
-- libgtk-4-1
+- libseat
+- libxkbcommon
+- libinput
+- libgtk
 - udev
 - dbus
 
 optionally (though the build-system might currently require these libraries):
-- libsystemd-dev
-- libpulse-dev
+- libsystem
+- libpulse
 - pop-launcher
-- libexpat1-dev
-- libfontconfig-dev
-- libfreetype-dev
+- libexpat1
+- libfontconfig
+- libfreetype
 - lld
+
+Note: `libfontconfig`, `libfreetype`, and `lld` are packages specific to Linux distributions. You may need to find the equivalent version for your distribution if you are not using Pop!_OS.
 
 The required ones can be installed with:
 ```
