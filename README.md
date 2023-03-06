@@ -4,7 +4,6 @@ Currently an incomplete **pre-alpha**.
 
 ## Components of COSMIC Desktop
 * [cosmic-applets](https://github.com/pop-os/cosmic-applets)
-* [cosmic-applet-host](https://github.com/pop-os/cosmic-applet-host)
 * [cosmic-applibrary](https://github.com/pop-os/cosmic-applibrary)
 * [cosmic-comp](https://github.com/pop-os/cosmic-comp)
 * [xdg-desktop-portal-cosmic](https://github.com/pop-os/xdg-desktop-portal-cosmic)
