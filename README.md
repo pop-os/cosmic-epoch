@@ -116,6 +116,8 @@ Access cosmic-launcher with `Super+/`. This will eventually be moved to `Super` 
 ##### COSMIC COMP
 COSMIC Comp is the compositor for COSMIC DE. Its config file is located at `/etc/cosmic-comp/config.ron`. Enable tiling by setting `tiling_enabled: true,` at the bottom of the file.
 
+`sudo nano /etc/cosmic-comp/config.ron`
+
 ##### Screenshots
 `sudo apt install ksnip qtwayland5`
 
