@@ -98,7 +98,7 @@ Notes on versioning and packaging all these components together properly will be
 COSMIC DE is in heavy development and not ready for issue reports. Currently, GUIs are incomplete and don't match designs, desktop settings aren't available and bugs are obvious and known. You're seeing the sausage be made. Most configuration is currently in text files and would be familiar to i3/Sway users. A call for testing will be announced when the project is ready for reports. With that out of the way, feel free to jump in and have fun.
 
 #### Enable Wayland
-`sudo nano /etc/gdm/custom.conf`
+`sudo nano /etc/gdm3/custom.conf`
 
 Change to true
 WayalandEnable=true
