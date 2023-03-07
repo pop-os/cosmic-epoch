@@ -127,7 +127,7 @@ Add `(modifiers: [], key: "Print"): Spawn("ksnip -t"),` to `/etc/cosmic-comp/con
 ```shell
 mkdir ~/.config/cosmic-panel
 cd ~/.config/cosmic-panel
-wget https://github.com/pop-os/cosmic-panel/blob/master_jammy/cosmic-panel-config/config.ron
+wget https://github.com/pop-os/cosmic-panel/raw/master_jammy/cosmic-panel-config/config.ron
 nano config.ron
 ```
 To apply configuration changes, open System Monitor, find the cosmic-panel process and click End Process. The panel should restart automatically. If not, you may have an invalid option or syntax error. Correct the error and launch the panel with `cosmic-panel </dev/null &>/dev/null &`.
