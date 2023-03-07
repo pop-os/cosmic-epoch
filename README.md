@@ -157,9 +157,11 @@ WebGL on NVIDIA is currently [broken](https://github.com/pop-os/cosmic-comp/issu
 `flatpak install com.google.Chrome`
 
 Change flags to enable wayland and dark mode.
+```
 chrome://flags/#ozone-platform-hint (Wayland)
 chrome://flags/#enable-force-dark (Enabled)
 chrome://flags/#enable-webrtc-pipewire-capturer (Enabled)
+```
 
 ## Contact
 - [Mattermost](https://chat.pop-os.org/)
