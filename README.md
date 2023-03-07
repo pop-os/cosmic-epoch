@@ -6,16 +6,21 @@ Currently an incomplete **pre-alpha**.
 * [cosmic-applets](https://github.com/pop-os/cosmic-applets)
 * [cosmic-applibrary](https://github.com/pop-os/cosmic-applibrary)
 * [cosmic-comp](https://github.com/pop-os/cosmic-comp)
-* [xdg-desktop-portal-cosmic](https://github.com/pop-os/xdg-desktop-portal-cosmic)
 * [cosmic-launcher](https://github.com/pop-os/cosmic-launcher)
 * [cosmic-osd](https://github.com/pop-os/cosmic-osd)
 * [comsic-panel](https://github.com/pop-os/cosmic-panel)
+* [cosmic-protocols](https://github.com/pop-os/cosmic-protocols)
 * [cosmic-settings](https://github.com/pop-os/cosmic-settings)
 * [cosmic-settings-daemon](https://github.com/pop-os/cosmic-settings-daemon)
 * [cosmic-session](https://github.com/pop-os/cosmic-session)
+* [cosmic-text](https://github.com/pop-os/cosmic-text)
+* [cosmic-text-editor](https://github.com/pop-os/cosmic-text-editor)
 * [cosmic-theme](https://github.com/pop-os/cosmic-theme)
 * [cosmic-theme-editor](https://github.com/pop-os/cosmic-theme-editor)
+* [cosmic-time](https://github.com/pop-os/cosmic-time)
+* [cosmic-workspaces-epoch](https://github.com/pop-os/cosmic-workspaces-epoch)
 * [libcosmic](https://github.com/pop-os/libcosmic)
+* [xdg-desktop-portal-cosmic](https://github.com/pop-os/xdg-desktop-portal-cosmic)
 
 ## Setup
 
@@ -58,7 +63,7 @@ They can be installed all at once with:
 ```
 sudo apt install just rustc libglvnd-dev libwayland-dev libseat-dev libxkbcommon-dev libinput-dev libgtk-4-1 udev dbus libsystemd-dev libpulse-dev pop-launcher libexpat1-dev libfontconfig-dev libfreetype-dev lld -y
 ```
- 
+
 ### Testing
 
 The easiest way to test COSMIC DE currently is by building a systemd system extension (see `man systemd-sysext`).
@@ -88,3 +93,75 @@ COSMIC DE is very much still work-in-progress and thus does not follow a version
 We do our best to keep the referenced submodule commits in this repository building and working together, as a consequence they might not contain the latest updates and features from these repositories (yet).
 
 Notes on versioning and packaging all these components together properly will be added at a later stage once COSMIC DE gets its first release.
+
+### Installing on Pop!_OS
+COSMIC DE is in heavy development and not ready for issue reports. Currently, GUIs are incomplete and don't match designs, desktop settings aren't available and bugs are obvious and known. You're seeing the sausage be made. Most configuration is currently in text files and would be familiar to i3/Sway users. A call for testing will be announced when the project is ready for reports. With that out of the way, feel free to jump in and have fun.
+
+#### Enable Wayland
+`sudo nano /etc/gdm/custom.conf`
+
+Change to true
+WayalandEnable=true
+
+#### Install COSMIC
+`sudo apt install cosmic-*`
+
+After logging out, click on your user and there will be a sprocket at the bottom right. Change the setting to COSMIC. Proceed to log in.
+
+#### Configuring COSMIC DE
+This is basic configuration to get you started. See individual projects repos above for details.
+
+Access cosmic-launcher with `Super+/`. This will eventually be moved to `Super` alone.
+
+##### COSMIC COMP
+COSMIC Comp is the compositor for COSMIC DE. Its config file is located at `/etc/cosmic-comp/config.ron`. Enable tiling by setting `tiling_enabled: true,` at the bottom of the file.
+
+##### Screenshots
+`sudo apt install ksnip qtwayland5`
+
+Add `(modifiers: [], key: "Print"): Spawn("ksnip -t"),` to `/etc/cosmic-comp/config.ron`. The screenshot will open in a separate window for cropping and saving.
+
+##### Panel Configuration
+```shell
+mkdir ~/.config/cosmic-panel
+cd ~/.config/cosmic-panel
+wget https://github.com/pop-os/cosmic-panel/blob/master_jammy/cosmic-panel-config/config.ron
+nano config.ron
+```
+To apply configuration changes, open System Monitor, find the cosmic-panel process and click End Process. The panel should restart automatically. If not, you may have an invalid option or syntax error. Correct the error and launch the panel with `cosmic-panel </dev/null &>/dev/null &`.
+
+##### Setting a Background
+```shell
+mkdir ~/.config/com.system76.CosmicBg
+cd ~/.config/com.system76.CosmicBg
+nano config.ron
+```
+
+Example file
+```
+(
+    backgrounds: [
+        (
+            output: All,
+            source: Path("/home/carl/Pictures/Wallpaper/pexels-eberhard-grossgasteiger-443446.jpg"),
+            filter_by_theme: false,
+            rotation_frequency: 3600,
+        ),
+    ],
+)
+```
+
+##### WebGL on NVIDIA
+WebGL on NVIDIA is currently [broken](https://github.com/pop-os/cosmic-comp/issues/84) but will work in Google Chrome using software rendering.
+
+`flatpak install com.google.Chrome`
+
+Change flags to enable wayland and dark mode.
+chrome://flags/#ozone-platform-hint (Wayland)
+chrome://flags/#enable-force-dark (Enabled)
+chrome://flags/#enable-webrtc-pipewire-capturer (Enabled)
+
+## Contact
+- [Mattermost](https://chat.pop-os.org/)
+- [Twitter](https://twitter.com/pop_os_official)
+- [Instagram](https://www.instagram.com/pop_os_official/)
