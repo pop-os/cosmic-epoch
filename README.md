@@ -101,7 +101,7 @@ COSMIC DE is in heavy development and not ready for issue reports. Currently, GU
 `sudo nano /etc/gdm3/custom.conf`
 
 Change to true
-WayalandEnable=true
+WaylandEnable=true
 
 #### Install COSMIC
 `sudo apt install cosmic-*`
