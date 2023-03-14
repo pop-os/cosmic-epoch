@@ -132,12 +132,8 @@ nano config.ron
 ```
 To apply configuration changes, open System Monitor, find the cosmic-panel process and click End Process. The panel should restart automatically. If not, you may have an invalid option or syntax error. Correct the error and launch the panel with `cosmic-panel </dev/null &>/dev/null &`.
 
-##### Setting a Background
-```shell
-mkdir ~/.config/com.system76.CosmicBg
-cd ~/.config/com.system76.CosmicBg
-nano config.ron
-```
+##### Desktop Backgrounds
+Desktop backgrounds currently cycle through system backgrounds. They'll be configurable once cosmic-settings integration is complete.
 
 Example file
 ```
