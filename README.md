@@ -135,20 +135,6 @@ To apply configuration changes, open System Monitor, find the cosmic-panel proce
 ##### Desktop Backgrounds
 Desktop backgrounds currently cycle through system backgrounds. They'll be configurable once cosmic-settings integration is complete.
 
-Example file
-```
-(
-    backgrounds: [
-        (
-            output: All,
-            source: Path("/home/carl/Pictures/Wallpaper/pexels-eberhard-grossgasteiger-443446.jpg"),
-            filter_by_theme: false,
-            rotation_frequency: 3600,
-        ),
-    ],
-)
-```
-
 ##### WebGL on NVIDIA
 WebGL on NVIDIA is currently [broken](https://github.com/pop-os/cosmic-comp/issues/84) but will work in Google Chrome using software rendering.
 
