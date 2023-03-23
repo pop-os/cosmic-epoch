@@ -24,6 +24,7 @@ build:
     {{ make }} -C cosmic-panel all
     {{ make }} -C cosmic-settings-daemon all
     {{ just }} cosmic-session/all
+    {{ make }} -C cosmic-workspaces-epoch all
     {{ make }} -C xdg-desktop-portal-cosmic all
 
 sysext dir=`echo $(pwd)/cosmic-sysext` version=("nightly-" + `git rev-parse --short HEAD`): build && (_extension_release dir version)
@@ -37,6 +38,7 @@ sysext dir=`echo $(pwd)/cosmic-sysext` version=("nightly-" + `git rev-parse --sh
     {{ make }} -C cosmic-panel install DESTDIR={{dir}} prefix=/usr
     {{ just }} rootdir={{dir}} cosmic-settings/install
     {{ make }} -C cosmic-settings-daemon install DESTDIR={{dir}} prefix=/usr
+    {{ make }} -C cosmic-workspaces-epoch install DESTDIR={{dir}} prefix=/usr
     {{ make }} -C xdg-desktop-portal-cosmic install DESTDIR={{dir}} prefix=/usr
     {{ just }} rootdir={{dir}} cosmic-session/install
 _extension_release dir version:
@@ -60,4 +62,5 @@ clean:
     rm -rf cosmic-settings/target
     rm -rf cosmic-settings-daemon/target
     rm -rf cosmic-session/target
+    rm -rf cosmic-workspaces-epoch/target
     rm -rf xdg-desktop-portal-cosmic/target
