@@ -34,3 +34,6 @@
 [submodule "cosmic-bg"]
 	path = cosmic-bg
 	url = https://github.com/pop-os/cosmic-bg.git
+[submodule "cosmic-workspaces-epoch"]
+	path = cosmic-workspaces-epoch
+	url = https://github.com/pop-os/cosmic-workspaces-epoch/
