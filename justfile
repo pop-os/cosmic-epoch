@@ -21,7 +21,7 @@ build:
     {{ make }} -C cosmic-comp all
     {{ just }} cosmic-launcher/build-release
     {{ make }} -C cosmic-osd all
-    {{ make }} -C cosmic-panel all
+    {{ just }} cosmic-panel/build-release
     {{ make }} -C cosmic-settings-daemon all
     {{ just }} cosmic-session/all
     {{ make }} -C cosmic-workspaces-epoch all
@@ -35,7 +35,7 @@ sysext dir=`echo $(pwd)/cosmic-sysext` version=("nightly-" + `git rev-parse --sh
     {{ make }} -C cosmic-comp install DESTDIR={{dir}}
     {{ just }} rootdir={{dir}} cosmic-launcher/install
     {{ make }} -C cosmic-osd install DESTDIR={{dir}} prefix=/usr
-    {{ make }} -C cosmic-panel install DESTDIR={{dir}} prefix=/usr
+    {{ just }} rootdir={{dir}} cosmic-panel/install
     {{ just }} rootdir={{dir}} cosmic-settings/install
     {{ make }} -C cosmic-settings-daemon install DESTDIR={{dir}} prefix=/usr
     {{ make }} -C cosmic-workspaces-epoch install DESTDIR={{dir}} prefix=/usr
