@@ -51,7 +51,7 @@ Note: `libfontconfig`, `libfreetype`, and `lld` are packages specific to Linux d
 
 The required ones can be installed with:
 ```
-sudo apt install just rustc libglvnd-dev libwayland-dev libseat-dev libxkbcommon-dev libinput-dev libgtk-4-1 udev dbus -y
+sudo apt install just rustc libglvnd-dev libwayland-dev libseat-dev libxkbcommon-dev libinput-dev libgtk-4-1 udev dbus meson -y
 ```
 
 and the optional ones with:
@@ -61,7 +61,7 @@ sudo apt install libsystemd-dev libpulse-dev pop-launcher libexpat1-dev libfontc
 
 They can be installed all at once with:
 ```
-sudo apt install just rustc libglvnd-dev libwayland-dev libseat-dev libxkbcommon-dev libinput-dev libgtk-4-1 udev dbus libsystemd-dev libpulse-dev pop-launcher libexpat1-dev libfontconfig-dev libfreetype-dev lld -y
+sudo apt install just rustc libglvnd-dev libwayland-dev libseat-dev libxkbcommon-dev libinput-dev libgtk-4-1 udev dbus libsystemd-dev libpulse-dev pop-launcher libexpat1-dev libfontconfig-dev libfreetype-dev lld meson -y
 ```
 
 ### Testing
