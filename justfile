@@ -1,16 +1,6 @@
 set dotenv-load
 just := just_executable()
 make := `which make`
-meson := `which meson`
-
-_meson_build dir:
-    -rm -rf {{dir}}_build
-    mkdir -p {{dir}}_build
-    {{ meson }} setup {{dir}}_build {{dir}} --prefix=/usr -Dvendor=false
-    {{ meson }} compile -C {{dir}}_build
-
-_meson_install dir destdir:
-    {{ meson }} install -C {{dir}}_build --destdir={{destdir}}
 
 build:
     mkdir -p build
