@@ -8,7 +8,7 @@ Currently an incomplete **pre-alpha**.
 * [cosmic-comp](https://github.com/pop-os/cosmic-comp)
 * [cosmic-launcher](https://github.com/pop-os/cosmic-launcher)
 * [cosmic-osd](https://github.com/pop-os/cosmic-osd)
-* [comsic-panel](https://github.com/pop-os/cosmic-panel)
+* [cosmic-panel](https://github.com/pop-os/cosmic-panel)
 * [cosmic-protocols](https://github.com/pop-os/cosmic-protocols)
 * [cosmic-settings](https://github.com/pop-os/cosmic-settings)
 * [cosmic-settings-daemon](https://github.com/pop-os/cosmic-settings-daemon)
