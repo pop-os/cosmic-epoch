@@ -1,6 +1,7 @@
 # COSMIC Desktop
 
-Currently an incomplete **pre-alpha**.
+Currently an incomplete **pre-alpha**. Standard Installation is available for Pop!_OS, Arch Linux and its decendents, like Manjaro.
+
 
 ## Components of COSMIC Desktop
 * [cosmic-applets](https://github.com/pop-os/cosmic-applets)
@@ -23,7 +24,7 @@ Currently an incomplete **pre-alpha**.
 * [libcosmic](https://github.com/pop-os/libcosmic)
 * [xdg-desktop-portal-cosmic](https://github.com/pop-os/xdg-desktop-portal-cosmic)
 
-## Setup
+## Setup without package
 
 The COSMIC desktop environment requires a few dependencies:
 (This list does not try to be exhaustive, but rather tries to provide a decent starting point. For detailed instructions check out the individual projects):
@@ -102,7 +103,7 @@ We do our best to keep the referenced submodule commits in this repository build
 
 Notes on versioning and packaging all these components together properly will be added at a later stage once COSMIC DE gets its first release.
 
-### Installing on Pop!_OS
+## Installing on Pop!_OS
 COSMIC DE is in heavy development and not ready for issue reports. Currently, GUIs are incomplete and don't match designs, desktop settings aren't available and bugs are obvious and known. You're seeing the sausage be made. Most configuration is currently in text files and would be familiar to i3/Sway users. A call for testing will be announced when the project is ready for reports. With that out of the way, feel free to jump in and have fun.
 
 #### Enable Wayland
@@ -128,7 +129,14 @@ sudo systemctl restart gdm
 
 After logging out, click on your user and there will be a sprocket at the bottom right. Change the setting to COSMIC. Proceed to log in.
 
-#### Configuring COSMIC DE
+## Installing on Arch Linux
+Installing via the preferred AUR helper is possible the usual way, e.g.:
+`paru -S cosmic-epoch-git`
+
+Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
+For a more detailled discussion consider the [relevant section in the Arch wiki](https://wiki.archlinux.org/title/COSMIChttps://wiki.archlinux.org/title/COSMIC).
+
+## Configuring COSMIC DE
 This is basic configuration to get you started. See individual projects repos above for details.
 
 Access cosmic-launcher with `Super` and cosmic-applibrary with `Super+a`.
