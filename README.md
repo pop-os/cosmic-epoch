@@ -107,6 +107,8 @@ COSMIC DE is in heavy development and not ready for issue reports. Currently, GU
 Change to true
 WaylandEnable=true
 
+Reboot for this change to take effect.
+
 #### Install COSMIC
 `sudo apt install cosmic-*`
 
