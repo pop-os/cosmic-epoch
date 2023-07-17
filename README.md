@@ -109,6 +109,16 @@ WaylandEnable=true
 
 Reboot for this change to take effect.
 
+#### Disable SELinux
+
+If you have SELinux enabled (e.g. on Fedora), the installed extension won't have the correct labels applied.
+To test COSMIC, you can temporarily disable it and restart `gdm` (note that this will close your running programs).
+
+```shell
+sudo setenforce 0
+sudo systemctl restart gdm
+```
+
 #### Install COSMIC
 `sudo apt install cosmic-*`
 
@@ -120,9 +130,13 @@ This is basic configuration to get you started. See individual projects repos ab
 Access cosmic-launcher with `Super+/`. This will eventually be moved to `Super` alone.
 
 ##### COSMIC COMP
-COSMIC Comp is the compositor for COSMIC DE. Its config file is located at `/etc/cosmic-comp/config.ron`. Enable tiling by setting `tiling_enabled: true,` at the bottom of the file.
+COSMIC Comp is the compositor for COSMIC DE. Its config file is located at `/etc/cosmic-comp/config.ron`. You can enable tiling by setting `tiling_enabled: true,` at the bottom of the file.
 
-`sudo nano /etc/cosmic-comp/config.ron`
+```shell
+sudo mkdir /etc/cosmic-comp
+sudo cp cosmic-comp/config.ron /etc/cosmic-comp
+sudo -e /etc/cosmic-comp/config.ron
+```
 
 ##### Screenshots
 `sudo apt install ksnip qtwayland5`
