@@ -10,6 +10,7 @@ build:
     {{ just }} cosmic-bg/build-release
     {{ make }} -C cosmic-comp all
     {{ just }} cosmic-launcher/build-release
+    {{ just }} cosmic-notifications/build-release
     {{ make }} -C cosmic-osd all
     {{ just }} cosmic-panel/build-release
     {{ make }} -C cosmic-settings-daemon all
@@ -24,6 +25,7 @@ sysext dir=`echo $(pwd)/cosmic-sysext` version=("nightly-" + `git rev-parse --sh
     {{ just }} rootdir={{dir}} cosmic-bg/install
     {{ make }} -C cosmic-comp install DESTDIR={{dir}}
     {{ just }} rootdir={{dir}} cosmic-launcher/install
+    {{ just }} rootdir={{dir}} cosmic-notifications/install
     {{ make }} -C cosmic-osd install DESTDIR={{dir}} prefix=/usr
     {{ just }} rootdir={{dir}} cosmic-panel/install
     {{ just }} rootdir={{dir}} cosmic-settings/install
@@ -48,6 +50,7 @@ clean:
     rm -rf cosmic-comp/target
     rm -rf cosmic-launcher/target
     rm -rf cosmic-panel/target
+    rm -rf cosmic-notifications/target
     rm -rf cosmic-osd/target
     rm -rf cosmic-settings/target
     rm -rf cosmic-settings-daemon/target

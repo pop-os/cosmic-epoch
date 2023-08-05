@@ -37,3 +37,6 @@
 [submodule "cosmic-workspaces-epoch"]
 	path = cosmic-workspaces-epoch
 	url = https://github.com/pop-os/cosmic-workspaces-epoch/
+[submodule "cosmic-notifications"]
+	path = cosmic-notifications
+	url = https://github.com/pop-os/cosmic-notifications
