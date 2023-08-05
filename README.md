@@ -7,6 +7,7 @@ Currently an incomplete **pre-alpha**.
 * [cosmic-applibrary](https://github.com/pop-os/cosmic-applibrary)
 * [cosmic-comp](https://github.com/pop-os/cosmic-comp)
 * [cosmic-launcher](https://github.com/pop-os/cosmic-launcher)
+* [cosmic-notifications](https://github.com/pop-os/cosmic-notifications)
 * [cosmic-osd](https://github.com/pop-os/cosmic-osd)
 * [cosmic-panel](https://github.com/pop-os/cosmic-panel)
 * [cosmic-protocols](https://github.com/pop-os/cosmic-protocols)
