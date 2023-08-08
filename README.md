@@ -76,7 +76,6 @@ git clone --recurse-submodules https://github.com/pop-os/cosmic-epoch
 cd cosmic-epoch
 just sysext
 ```
-
 This will create a system-extension called `cosmic-sysext`, that you can move (without renaming!) into e.g. `/var/lib/extensions`.
 After starting systemd-sysext.service (`sudo systemctl enable --now systemd-sysext`) and refreshing (`sudo systemd-sysext refresh`) or rebooting,
 *COSMIC* will be an available option in your favorite display manager.
@@ -85,6 +84,18 @@ After starting systemd-sysext.service (`sudo systemctl enable --now systemd-syse
 It also requires the previously mentioned libraries/dependencies at runtime to be installed in your system (the system extension does not carry these libraries).
 
 It is thus no proper method for long term deployment.
+
+## Testing on Arch Linux
+
+# Installing with yay
+
+```
+sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && yay -S cosmic-epoch-git
+```
+# Installing with paru
+```
+sudo pacman -S --needed base-devel && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && paru -S cosmic-epoch-git
+```
 
 ### Packaging
 
