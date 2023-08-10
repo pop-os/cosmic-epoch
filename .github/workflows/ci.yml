@@ -18,6 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: archlinux:latest
+      volumes:
+        - /:/host
     steps:
     - run: >
         pacman --noconfirm -Syu
@@ -41,6 +43,7 @@ jobs:
         expat
         fontconfig
         freetype2
+    - run: rm -rf /host/usr/local/lib/android # Free space
     - uses: actions/checkout@v3
       with:
         submodules: true
