@@ -131,7 +131,7 @@ This is basic configuration to get you started. See individual projects repos ab
 Access cosmic-launcher with `Super+/`. This will eventually be moved to `Super` alone.
 
 ##### COSMIC COMP
-COSMIC Comp is the compositor for COSMIC DE. Its config file is located at `/etc/cosmic-comp/config.ron`. You can enable tiling by setting `tiling_enabled: true,` at the bottom of the file.
+COSMIC Comp is the compositor for COSMIC DE. Its config file is located at `/etc/cosmic-comp/config.ron`. You can enable tiling by default by setting `tiling_enabled: true,` at the bottom of the file. Super+y will toggle tiling per workspace.
 
 ```shell
 sudo mkdir /etc/cosmic-comp
@@ -145,28 +145,16 @@ sudo -e /etc/cosmic-comp/config.ron
 Add `(modifiers: [], key: "Print"): Spawn("ksnip -t"),` to `/etc/cosmic-comp/config.ron`. The screenshot will open in a separate window for cropping and saving.
 
 ##### Panel Configuration
-```shell
-mkdir ~/.config/cosmic-panel
-cd ~/.config/cosmic-panel
-wget https://github.com/pop-os/cosmic-panel/raw/master_jammy/cosmic-panel-config/config.ron
-nano config.ron
-```
-To apply configuration changes, open System Monitor, find the cosmic-panel process and click End Process. The panel should restart automatically. If not, you may have an invalid option or syntax error. Correct the error and launch the panel with `cosmic-panel </dev/null &>/dev/null &`.
+Panels can now be configured in the COSMIC Settings app under Desktop > Desktop and Panel > Panel/Dock
 
-##### Desktop Backgrounds
-Desktop backgrounds currently cycle through system backgrounds. They'll be configurable once cosmic-settings integration is complete.
+##### Desktop Wallpaper
+Wallpaper can now be configured in the COSMIC Settings app under Desktop > Wallpapers
 
 ##### WebGL on NVIDIA
 WebGL on NVIDIA is currently [broken](https://github.com/pop-os/cosmic-comp/issues/84) but will work in Google Chrome using software rendering.
 
 `flatpak install com.google.Chrome`
 
-Change flags to enable wayland and dark mode.
-```
-chrome://flags/#ozone-platform-hint (Wayland)
-chrome://flags/#enable-force-dark (Enabled)
-chrome://flags/#enable-webrtc-pipewire-capturer (Enabled)
-```
 
 ## Contact
 - [Mattermost](https://chat.pop-os.org/)
