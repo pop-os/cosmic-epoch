@@ -86,7 +86,7 @@ After starting systemd-sysext.service (`sudo systemctl enable --now systemd-syse
 It also requires the previously mentioned libraries/dependencies at runtime to be installed in your system (the system extension does not carry these libraries).
 
 **Read-Only Filesystem**: If you're not on an immutable distro you may notice that `/usr/` and `/opt/` are read-only.
-this is caused by `systemd-sysext` being enabled, when you are done testing you can disable `systemd-sysext` (`sudo systemctl disable systemd-sysext`)
+this is caused by `systemd-sysext` being enabled, when you are done testing you can disable `systemd-sysext` (`sudo systemctl disable --now systemd-sysext`)
 
 It is thus no proper method for long term deployment.
 
