@@ -54,3 +54,7 @@
 	path = cosmic-notifications
 	url = https://github.com/pop-os/cosmic-notifications
 	branch = master_jammy
+[submodule "cosmic-icons"]
+	path = cosmic-icons
+	url = https://github.com/pop-os/cosmic-icons.git
+	branch = master_jammy
