@@ -24,6 +24,7 @@ sysext dir=`echo $(pwd)/cosmic-sysext` version=("nightly-" + `git rev-parse --sh
     {{ just }} rootdir={{dir}} cosmic-applibrary/install
     {{ just }} rootdir={{dir}} cosmic-bg/install
     {{ make }} -C cosmic-comp install DESTDIR={{dir}}
+    {{ just }} rootdir={{dir}} cosmic-icons/install
     {{ just }} rootdir={{dir}} cosmic-launcher/install
     {{ just }} rootdir={{dir}} cosmic-notifications/install
     {{ make }} -C cosmic-osd install DESTDIR={{dir}} prefix=/usr
