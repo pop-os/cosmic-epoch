@@ -1,42 +1,60 @@
 [submodule "cosmic-session"]
 	path = cosmic-session
 	url = https://github.com/pop-os/cosmic-session
+	branch = master_jammy
 [submodule "cosmic-comp"]
 	path = cosmic-comp
 	url = https://github.com/pop-os/cosmic-comp
+	branch = master_jammy
 [submodule "cosmic-panel"]
 	path = cosmic-panel
 	url = https://github.com/pop-os/cosmic-panel
+	branch = master_jammy
 [submodule "cosmic-applets"]
 	path = cosmic-applets
 	url = https://github.com/pop-os/cosmic-applets
+	branch = master_jammy
 [submodule "cosmic-applibrary"]
 	path = cosmic-applibrary
 	url = https://github.com/pop-os/cosmic-applibrary
+	    branch = master_jammy
 [submodule "cosmic-launcher"]
 	path = cosmic-launcher
 	url = https://github.com/pop-os/cosmic-launcher
+	branch = master_jammy
 [submodule "simple-wrapper"]
 	path = simple-wrapper
 	url = https://github.com/pop-os/simple-wrapper
+	branch = master_jammy
 [submodule "cosmic-settings"]
-        path = cosmic-settings
-        url = https://github.com/pop-os/cosmic-settings
+	path = cosmic-settings
+	url = https://github.com/pop-os/cosmic-settings
+	branch = master_jammy
 [submodule "cosmic-settings-daemon"]
 	path = cosmic-settings-daemon
 	url = https://github.com/pop-os/cosmic-settings-daemon
+	branch = master_jammy
 [submodule "xdg-desktop-portal-cosmic"]
 	path = xdg-desktop-portal-cosmic
 	url = https://github.com/pop-os/xdg-desktop-portal-cosmic.git
+	branch = master_jammy
 [submodule "cosmic-osd"]
 	path = cosmic-osd
 	url = https://github.com/pop-os/cosmic-osd.git
+	branch = master_jammy
 [submodule "cosmic-bg"]
 	path = cosmic-bg
 	url = https://github.com/pop-os/cosmic-bg.git
+	branch = master_jammy
 [submodule "cosmic-workspaces-epoch"]
 	path = cosmic-workspaces-epoch
 	url = https://github.com/pop-os/cosmic-workspaces-epoch/
+	branch = master_jammy
 [submodule "cosmic-notifications"]
 	path = cosmic-notifications
 	url = https://github.com/pop-os/cosmic-notifications
+	branch = master_jammy
+[submodule "cosmic-icons"]
+	path = cosmic-icons
+	url = https://github.com/pop-os/cosmic-icons.git
+	branch = master_jammy
