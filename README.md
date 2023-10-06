@@ -131,7 +131,7 @@ After logging out, click on your user and there will be a sprocket at the bottom
 #### Configuring COSMIC DE
 This is basic configuration to get you started. See individual projects repos above for details.
 
-Access cosmic-launcher with `Super+/`. This will eventually be moved to `Super` alone.
+Access cosmic-launcher with `Super` and cosmic-applibrary with `Super+a`.
 
 ##### COSMIC COMP
 COSMIC Comp is the compositor for COSMIC DE. Its config file is located at `/etc/cosmic-comp/config.ron`. You can enable tiling by default by setting `tiling_enabled: true,` at the bottom of the file. Super+y will toggle tiling per workspace.
@@ -140,6 +140,13 @@ COSMIC Comp is the compositor for COSMIC DE. Its config file is located at `/etc
 sudo mkdir /etc/cosmic-comp
 sudo cp cosmic-comp/config.ron /etc/cosmic-comp
 sudo -e /etc/cosmic-comp/config.ron
+```
+
+###### Scaling
+Changing the scaling of the DE can be done in this file:
+
+```shell
+nano ~/.local/state/cosmic-comp/outputs.ron
 ```
 
 ##### Screenshots
@@ -157,7 +164,6 @@ Wallpaper can now be configured in the COSMIC Settings app under Desktop > Wallp
 WebGL on NVIDIA is currently [broken](https://github.com/pop-os/cosmic-comp/issues/84) but will work in Google Chrome using software rendering.
 
 `flatpak install com.google.Chrome`
-
 
 ## Contact
 - [Mattermost](https://chat.pop-os.org/)
