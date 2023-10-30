@@ -15,7 +15,7 @@ Currently an incomplete **pre-alpha**.
 * [cosmic-settings-daemon](https://github.com/pop-os/cosmic-settings-daemon)
 * [cosmic-session](https://github.com/pop-os/cosmic-session)
 * [cosmic-text](https://github.com/pop-os/cosmic-text)
-* [cosmic-text-editor](https://github.com/pop-os/cosmic-text-editor)
+* [cosmic-edit](https://github.com/pop-os/cosmic-edit)
 * [cosmic-theme](https://github.com/pop-os/cosmic-theme)
 * [cosmic-theme-editor](https://github.com/pop-os/cosmic-theme-editor)
 * [cosmic-time](https://github.com/pop-os/cosmic-time)
