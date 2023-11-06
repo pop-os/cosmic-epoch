@@ -24,7 +24,7 @@ Currently an incomplete **pre-alpha**. Standard Installation is available for Po
 * [libcosmic](https://github.com/pop-os/libcosmic)
 * [xdg-desktop-portal-cosmic](https://github.com/pop-os/xdg-desktop-portal-cosmic)
 
-## Setup without package
+## Setup on distributions without packaging of cosmic components
 
 The COSMIC desktop environment requires a few dependencies:
 (This list does not try to be exhaustive, but rather tries to provide a decent starting point. For detailed instructions check out the individual projects):
