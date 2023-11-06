@@ -134,7 +134,7 @@ Installing via the preferred AUR helper is possible the usual way, e.g.:
 `paru -S cosmic-epoch-git`
 
 Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
-For a more detailled discussion consider the [relevant section in the Arch wiki](https://wiki.archlinux.org/title/COSMIChttps://wiki.archlinux.org/title/COSMIC).
+For a more detailled discussion consider the [relevant section in the Arch wiki](https://wiki.archlinux.org/title/COSMIC).
 
 ## Configuring COSMIC DE
 This is basic configuration to get you started. See individual projects repos above for details.
