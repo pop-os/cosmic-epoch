@@ -58,3 +58,12 @@
 	path = cosmic-icons
 	url = https://github.com/pop-os/cosmic-icons.git
 	branch = master_jammy
+[submodule "cosmic-greeter"]
+	path = cosmic-greeter
+	url = https://github.com/pop-os/cosmic-greeter
+[submodule "cosmic-screenshot"]
+	path = cosmic-screenshot
+	url = https://github.com/pop-os/cosmic-screenshot
+[submodule "cosmic-edit"]
+	path = cosmic-edit
+	url = https://github.com/pop-os/cosmic-edit

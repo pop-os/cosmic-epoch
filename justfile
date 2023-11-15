@@ -4,15 +4,18 @@ make := `which make`
 
 build:
     mkdir -p build
-    {{ just }} cosmic-settings/build-release
-    {{ just }} cosmic-applets/build
+    {{ just }} cosmic-applets/build-release
     {{ just }} cosmic-applibrary/build-release
     {{ just }} cosmic-bg/build-release
     {{ make }} -C cosmic-comp all
+    {{ just }} cosmic-edit/build-release
+    {{ just }} cosmic-greeter/build-release
     {{ just }} cosmic-launcher/build-release
     {{ just }} cosmic-notifications/build-release
     {{ make }} -C cosmic-osd all
     {{ just }} cosmic-panel/build-release
+    {{ just }} cosmic-screenshot/build-release
+    {{ just }} cosmic-settings/build-release
     {{ make }} -C cosmic-settings-daemon all
     {{ just }} cosmic-session/all
     {{ make }} -C cosmic-workspaces-epoch all
@@ -24,16 +27,20 @@ sysext dir=`echo $(pwd)/cosmic-sysext` version=("nightly-" + `git rev-parse --sh
     {{ just }} rootdir={{dir}} cosmic-applibrary/install
     {{ just }} rootdir={{dir}} cosmic-bg/install
     {{ make }} -C cosmic-comp install DESTDIR={{dir}}
+    {{ just }} rootdir={{dir}} cosmic-edit/install
+    {{ just }} rootdir={{dir}} cosmic-greeter/install
     {{ just }} rootdir={{dir}} cosmic-icons/install
     {{ just }} rootdir={{dir}} cosmic-launcher/install
     {{ just }} rootdir={{dir}} cosmic-notifications/install
     {{ make }} -C cosmic-osd install DESTDIR={{dir}} prefix=/usr
     {{ just }} rootdir={{dir}} cosmic-panel/install
+    {{ just }} rootdir={{dir}} cosmic-screenshot/install
     {{ just }} rootdir={{dir}} cosmic-settings/install
     {{ make }} -C cosmic-settings-daemon install DESTDIR={{dir}} prefix=/usr
+    {{ just }} rootdir={{dir}} cosmic-session/install
     {{ make }} -C cosmic-workspaces-epoch install DESTDIR={{dir}} prefix=/usr
     {{ make }} -C xdg-desktop-portal-cosmic install DESTDIR={{dir}} prefix=/usr
-    {{ just }} rootdir={{dir}} cosmic-session/install
+
 _extension_release dir version:
     #!/usr/bin/env sh
     cat >{{dir}}/usr/lib/extension-release.d/extension-release.cosmic-sysext <<EOF
@@ -49,10 +56,13 @@ clean:
     rm -rf cosmic-applibrary/target
     rm -rf cosmic-bg/target
     rm -rf cosmic-comp/target
+    rm -rf cosmic-edit/target
+    rm -rf cosmic-greeter/target
     rm -rf cosmic-launcher/target
     rm -rf cosmic-panel/target
     rm -rf cosmic-notifications/target
     rm -rf cosmic-osd/target
+    rm -rf cosmic-screenshot/target
     rm -rf cosmic-settings/target
     rm -rf cosmic-settings-daemon/target
     rm -rf cosmic-session/target
