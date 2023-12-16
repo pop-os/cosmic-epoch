@@ -23,12 +23,12 @@ jobs:
     steps:
     - run: >
         pacman --noconfirm -Syu
-        at-spi2-core
         base-devel
         cargo
         clang
         desktop-file-utils
         git
+        gtk3
         gtk4
         just
         libinput
