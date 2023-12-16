@@ -23,6 +23,7 @@ jobs:
     steps:
     - run: >
         pacman --noconfirm -Syu
+        at-spi2-core
         base-devel
         cargo
         clang
