@@ -28,6 +28,7 @@ jobs:
         clang
         desktop-file-utils
         git
+        gtk3
         gtk4
         just
         libinput
