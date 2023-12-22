@@ -17,6 +17,7 @@ Currently an incomplete **pre-alpha**. Testing instructions below for various di
 * [cosmic-session](https://github.com/pop-os/cosmic-session)
 * [cosmic-text](https://github.com/pop-os/cosmic-text)
 * [cosmic-edit](https://github.com/pop-os/cosmic-edit)
+* [cosmic-term](https://github.com/pop-os/cosmic-term)
 * [cosmic-theme](https://github.com/pop-os/cosmic-theme)
 * [cosmic-theme-editor](https://github.com/pop-os/cosmic-theme-editor)
 * [cosmic-time](https://github.com/pop-os/cosmic-time)
