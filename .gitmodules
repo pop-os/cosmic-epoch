@@ -67,3 +67,7 @@
 [submodule "cosmic-edit"]
 	path = cosmic-edit
 	url = https://github.com/pop-os/cosmic-edit
+[submodule "cosmic-term"]
+	path = cosmic-term
+	url = https://github.com/pop-os/cosmic-term.git
+	branch = master_jammy
