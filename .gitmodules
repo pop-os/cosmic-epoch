@@ -71,3 +71,6 @@
 	path = cosmic-term
 	url = https://github.com/pop-os/cosmic-term.git
 	branch = master_jammy
+[submodule "cosmic-randr"]
+	path = cosmic-randr
+	url = https://github.com/pop-os/cosmic-randr.git
