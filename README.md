@@ -54,6 +54,8 @@ optionally (though the build-system might currently require these libraries):
 - libgbm-dev
 - libclang-dev
 - libpipewire-0.3-dev
+- librust-atk-dev
+- libpam0g-dev
 
 Note: `libfontconfig`, `libfreetype`, and `lld` are packages specific to Linux distributions. You may need to find the equivalent version for your distribution if you are not using Pop!_OS.
 
@@ -64,12 +66,12 @@ sudo apt install just rustc libglvnd-dev libwayland-dev libseat-dev libxkbcommon
 
 and the optional ones with:
 ```
-sudo apt install libsystemd-dev libpulse-dev pop-launcher libexpat1-dev libfontconfig-dev libfreetype-dev lld cargo libgbm-dev libclang-dev libpipewire-0.3-dev -y
+sudo apt install libsystemd-dev libpulse-dev pop-launcher libexpat1-dev libfontconfig-dev libfreetype-dev lld cargo libgbm-dev libclang-dev libpipewire-0.3-dev librust-atk-dev libpam0g-dev -y
 ```
 
 They can be installed all at once with:
 ```
-sudo apt install just rustc libglvnd-dev libwayland-dev libseat-dev libxkbcommon-dev libinput-dev libgtk-4-1 udev dbus libdbus-1-dev libsystemd-dev libpulse-dev pop-launcher libexpat1-dev libfontconfig-dev libfreetype-dev lld cargo libgbm-dev libclang-dev libpipewire-0.3-dev -y
+sudo apt install just rustc libglvnd-dev libwayland-dev libseat-dev libxkbcommon-dev libinput-dev libgtk-4-1 udev dbus libdbus-1-dev libsystemd-dev libpulse-dev pop-launcher libexpat1-dev libfontconfig-dev libfreetype-dev lld cargo libgbm-dev libclang-dev libpipewire-0.3-dev librust-atk-dev libpam0g-dev -y
 ```
 
 ### Testing
