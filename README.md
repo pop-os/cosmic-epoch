@@ -7,24 +7,28 @@ Currently an incomplete **pre-alpha**. Testing instructions below for various di
 * [cosmic-applets](https://github.com/pop-os/cosmic-applets)
 * [cosmic-applibrary](https://github.com/pop-os/cosmic-applibrary)
 * [cosmic-comp](https://github.com/pop-os/cosmic-comp)
+* [cosmic-edit](https://github.com/pop-os/cosmic-edit)
+* [cosmic-files](https://github.com/pop-os/cosmic-files)
 * [cosmic-launcher](https://github.com/pop-os/cosmic-launcher)
 * [cosmic-notifications](https://github.com/pop-os/cosmic-notifications)
 * [cosmic-osd](https://github.com/pop-os/cosmic-osd)
 * [cosmic-panel](https://github.com/pop-os/cosmic-panel)
-* [cosmic-protocols](https://github.com/pop-os/cosmic-protocols)
 * [cosmic-randr](https://github.com/pop-os/cosmic-randr)
-* [cosmic-settings](https://github.com/pop-os/cosmic-settings)
-* [cosmic-settings-daemon](https://github.com/pop-os/cosmic-settings-daemon)
 * [cosmic-session](https://github.com/pop-os/cosmic-session)
-* [cosmic-text](https://github.com/pop-os/cosmic-text)
-* [cosmic-edit](https://github.com/pop-os/cosmic-edit)
+* [cosmic-settings-daemon](https://github.com/pop-os/cosmic-settings-daemon)
+* [cosmic-settings](https://github.com/pop-os/cosmic-settings)
 * [cosmic-term](https://github.com/pop-os/cosmic-term)
-* [cosmic-theme](https://github.com/pop-os/cosmic-theme)
 * [cosmic-theme-editor](https://github.com/pop-os/cosmic-theme-editor)
-* [cosmic-time](https://github.com/pop-os/cosmic-time)
 * [cosmic-workspaces-epoch](https://github.com/pop-os/cosmic-workspaces-epoch)
-* [libcosmic](https://github.com/pop-os/libcosmic)
 * [xdg-desktop-portal-cosmic](https://github.com/pop-os/xdg-desktop-portal-cosmic)
+
+### COSMIC libraries/crates
+
+* [cosmic-protocols](https://github.com/pop-os/cosmic-protocols)
+* [cosmic-text](https://github.com/pop-os/cosmic-text)
+* [cosmic-theme](https://github.com/pop-os/cosmic-theme)
+* [cosmic-time](https://github.com/pop-os/cosmic-time)
+* [libcosmic](https://github.com/pop-os/libcosmic)
 
 ## Setup on distributions without packaging of cosmic components
 

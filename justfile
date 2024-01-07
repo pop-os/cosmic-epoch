@@ -9,6 +9,7 @@ build:
     {{ just }} cosmic-bg/build-release
     {{ make }} -C cosmic-comp all
     {{ just }} cosmic-edit/build-release
+    {{ just }} cosmic-files/build-release
     {{ just }} cosmic-greeter/build-release
     {{ just }} cosmic-launcher/build-release
     {{ just }} cosmic-notifications/build-release
@@ -30,6 +31,7 @@ sysext dir=`echo $(pwd)/cosmic-sysext` version=("nightly-" + `git rev-parse --sh
     {{ just }} rootdir={{dir}} cosmic-bg/install
     {{ make }} -C cosmic-comp install DESTDIR={{dir}}
     {{ just }} rootdir={{dir}} cosmic-edit/install
+    {{ just }} rootdir={{dir}} cosmic-files/install
     {{ just }} rootdir={{dir}} cosmic-greeter/install
     {{ just }} rootdir={{dir}} cosmic-icons/install
     {{ just }} rootdir={{dir}} cosmic-launcher/install
@@ -62,6 +64,7 @@ clean:
     rm -rf cosmic-bg/target
     rm -rf cosmic-comp/target
     rm -rf cosmic-edit/target
+    {{ just }} cosmic-files/clean
     rm -rf cosmic-greeter/target
     rm -rf cosmic-launcher/target
     rm -rf cosmic-panel/target
