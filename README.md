@@ -6,9 +6,12 @@ Currently an incomplete **pre-alpha**. Testing instructions below for various di
 ## Components of COSMIC Desktop
 * [cosmic-applets](https://github.com/pop-os/cosmic-applets)
 * [cosmic-applibrary](https://github.com/pop-os/cosmic-applibrary)
+* [cosmic-bg](https://github.com/pop-os/cosmic-bg)
 * [cosmic-comp](https://github.com/pop-os/cosmic-comp)
 * [cosmic-edit](https://github.com/pop-os/cosmic-edit)
 * [cosmic-files](https://github.com/pop-os/cosmic-files)
+* [cosmic-greeter](https://github.com/pop-os/cosmic-greeter)
+* [cosmic-icons](https://github.com/pop-os/cosmic-icons)
 * [cosmic-launcher](https://github.com/pop-os/cosmic-launcher)
 * [cosmic-notifications](https://github.com/pop-os/cosmic-notifications)
 * [cosmic-osd](https://github.com/pop-os/cosmic-osd)
