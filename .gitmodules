@@ -78,3 +78,7 @@
 	path = cosmic-files
 	url = https://github.com/pop-os/cosmic-files.git
 	branch = master_jammy
+[submodule "cosmic-store"]
+	path = cosmic-store
+	url = https://github.com/pop-os/cosmic-store.git
+	branch = master_jammy
