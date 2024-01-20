@@ -20,6 +20,7 @@ Currently an incomplete **pre-alpha**. Testing instructions below for various di
 * [cosmic-session](https://github.com/pop-os/cosmic-session)
 * [cosmic-settings-daemon](https://github.com/pop-os/cosmic-settings-daemon)
 * [cosmic-settings](https://github.com/pop-os/cosmic-settings)
+* [cosmic-store](https://github.com/pop-os/cosmic-store)
 * [cosmic-term](https://github.com/pop-os/cosmic-term)
 * [cosmic-theme-editor](https://github.com/pop-os/cosmic-theme-editor)
 * [cosmic-workspaces-epoch](https://github.com/pop-os/cosmic-workspaces-epoch)
