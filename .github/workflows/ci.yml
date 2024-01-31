@@ -44,10 +44,11 @@ jobs:
         expat
         fontconfig
         freetype2
+        flatpak
     - run: rm -rf /host/usr/local/lib/android # Free space
     - uses: actions/checkout@v3
       with:
-        submodules: true
+        submodules: recursive
     # Safe directory behavior seems to have issues with `container:`
     # https://github.com/actions/checkout/issues/915
     - run: git config --global --add safe.directory '*'
