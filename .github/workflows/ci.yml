@@ -45,6 +45,7 @@ jobs:
         fontconfig
         freetype2
         flatpak
+        nasm
     - run: rm -rf /host/usr/local/lib/android # Free space
     - uses: actions/checkout@v3
       with:
