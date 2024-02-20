@@ -25,32 +25,35 @@ build:
     {{ make }} -C cosmic-workspaces-epoch all
     {{ make }} -C xdg-desktop-portal-cosmic all
 
-sysext dir=`echo $(pwd)/cosmic-sysext` version=("nightly-" + `git rev-parse --short HEAD`): build && (_extension_release dir version)
-    mkdir -p {{dir}}/usr/lib/extension-release.d/
-    {{ just }} rootdir={{dir}} cosmic-applets/install
-    {{ just }} rootdir={{dir}} cosmic-applibrary/install
-    {{ just }} rootdir={{dir}} cosmic-bg/install
-    {{ make }} -C cosmic-comp install DESTDIR={{dir}}
-    {{ just }} rootdir={{dir}} cosmic-edit/install
-    {{ just }} rootdir={{dir}} cosmic-files/install
-    {{ just }} rootdir={{dir}} cosmic-greeter/install
-    {{ just }} rootdir={{dir}} cosmic-icons/install
-    {{ just }} rootdir={{dir}} cosmic-launcher/install
-    {{ just }} rootdir={{dir}} cosmic-notifications/install
-    {{ make }} -C cosmic-osd install DESTDIR={{dir}} prefix=/usr
-    {{ just }} rootdir={{dir}} cosmic-panel/install
-    {{ just }} rootdir={{dir}} cosmic-randr/install
-    {{ just }} rootdir={{dir}} cosmic-screenshot/install
-    {{ just }} rootdir={{dir}} cosmic-settings/install
-    {{ make }} -C cosmic-settings-daemon install DESTDIR={{dir}} prefix=/usr
-    {{ just }} rootdir={{dir}} cosmic-session/install
-    {{ just }} rootdir={{dir}} cosmic-store/install
-    {{ just }} rootdir={{dir}} cosmic-term/install
-    {{ make }} -C cosmic-workspaces-epoch install DESTDIR={{dir}} prefix=/usr
-    {{ make }} -C xdg-desktop-portal-cosmic install DESTDIR={{dir}} prefix=/usr
+install rootdir="" prefix="/usr/local": build
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-applets/install
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-applibrary/install
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-bg/install
+    {{ make }} -C cosmic-comp install DESTDIR={{rootdir}} prefix={{prefix}}
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-edit/install
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-files/install
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-greeter/install
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-icons/install
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-launcher/install
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-notifications/install
+    {{ make }} -C cosmic-osd install DESTDIR={{rootdir}} prefix={{prefix}}
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-panel/install
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-randr/install
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-screenshot/install
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-settings/install
+    {{ make }} -C cosmic-settings-daemon install DESTDIR={{rootdir}} prefix={{prefix}}
+    {{ just }} rootdir={{rootdir}} prefix={{rootdir + prefix}} cosmic-session/install
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-store/install
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-term/install
+    {{ make }} -C cosmic-workspaces-epoch install DESTDIR={{rootdir}} prefix={{prefix}}
+    {{ make }} -C xdg-desktop-portal-cosmic install DESTDIR={{rootdir}} prefix={{prefix}}
 
-_extension_release dir version:
+_mkdir dir:
+   mkdir -p dir
+
+sysext dir=(invocation_directory() / "cosmic-sysext") version=("nightly-" + `git rev-parse --short HEAD`): (_mkdir dir) (install dir "/usr")
     #!/usr/bin/env sh
+    mkdir -p {{dir}}/usr/lib/extension-release.d/
     cat >{{dir}}/usr/lib/extension-release.d/extension-release.cosmic-sysext <<EOF
     NAME="Cosmic DE"
     VERSION={{version}}
