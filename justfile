@@ -2,6 +2,9 @@ set dotenv-load
 just := just_executable()
 make := `which make`
 
+rootdir := ''
+prefix := '/usr/local'
+
 build:
     mkdir -p build
     {{ just }} cosmic-applets/build-release
@@ -25,7 +28,8 @@ build:
     {{ make }} -C cosmic-workspaces-epoch all
     {{ make }} -C xdg-desktop-portal-cosmic all
 
-install rootdir="" prefix="/usr/local": build
+install:
+    build
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-applets/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-applibrary/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-bg/install
