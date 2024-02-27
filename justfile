@@ -15,6 +15,7 @@ build:
     {{ just }} cosmic-notifications/build-release
     {{ make }} -C cosmic-osd all
     {{ just }} cosmic-panel/build-release
+    {{ just }} cosmic-player/build-release
     {{ just }} cosmic-randr/build-release
     {{ just }} cosmic-screenshot/build-release
     {{ just }} cosmic-settings/build-release
@@ -38,6 +39,7 @@ install rootdir="" prefix="/usr/local": build
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-notifications/install
     {{ make }} -C cosmic-osd install DESTDIR={{rootdir}} prefix={{prefix}}
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-panel/install
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-player/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-randr/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-screenshot/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-settings/install
@@ -73,6 +75,7 @@ clean:
     rm -rf cosmic-greeter/target
     rm -rf cosmic-launcher/target
     rm -rf cosmic-panel/target
+    {{ just }} cosmic-player/clean
     rm -rf cosmic-notifications/target
     rm -rf cosmic-osd/target
     rm -rf cosmic-randr/target
