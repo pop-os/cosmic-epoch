@@ -67,22 +67,22 @@ sysext dir=(invocation_directory() / "cosmic-sysext") version=("nightly-" + `git
 clean:
     rm -rf cosmic-sysext
     rm -rf cosmic-applets/target
-    rm -rf cosmic-applibrary/target
-    rm -rf cosmic-bg/target
+    {{ just }} cosmic-applibrary/clean
+    {{ just }} cosmic-bg/clean
     rm -rf cosmic-comp/target
-    rm -rf cosmic-edit/target
+    {{ just }} cosmic-edit/clean
     {{ just }} cosmic-files/clean
-    rm -rf cosmic-greeter/target
-    rm -rf cosmic-launcher/target
-    rm -rf cosmic-panel/target
-    {{ just }} cosmic-player/clean
-    rm -rf cosmic-notifications/target
+    {{ just }} cosmic-greeter/clean
+    {{ just }} cosmic-launcher/clean
+    {{ just }} cosmic-notifications/clean
     rm -rf cosmic-osd/target
-    rm -rf cosmic-randr/target
-    rm -rf cosmic-screenshot/target
-    rm -rf cosmic-settings/target
+    {{ just }} cosmic-panel/clean
+    {{ just }} cosmic-player/clean
+    {{ just }} cosmic-randr/clean
+    {{ just }} cosmic-screenshot/clean
+    {{ just }} cosmic-settings/clean
     rm -rf cosmic-settings-daemon/target
-    rm -rf cosmic-session/target
+    {{ just }} cosmic-session/clean
     {{ just }} cosmic-store/clean
     {{ just }} cosmic-term/clean
     rm -rf cosmic-workspaces-epoch/target
