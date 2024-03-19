@@ -134,6 +134,30 @@ sudo setenforce 0
 sudo systemctl restart gdm
 ```
 
+#### Update udev rules for NVIDIA users
+
+```shell
+sudo nano /usr/lib/udev/rules.d/61-gdm.rules
+```
+
+Looks for `LABEL="gdm_prefer_xorg"` and `LABEL="gdm_disable_wayland"`, add `#` to the `RUN` statement so it will look like this
+
+```
+LABEL="gdm_prefer_xorg"
+#RUN+="/usr/libexec/gdm-runtime-config set daemon PreferredDisplayServer xorg"
+GOTO="gdm_end"
+
+LABEL="gdm_disable_wayland"
+#RUN+="/usr/libexec/gdm-runtime-config set daemon WaylandEnable false"
+GOTO="gdm_end"
+```
+
+Restart gdm
+
+```shell
+sudo systemctl restart gdm
+```
+
 #### Install COSMIC
 `sudo apt install cosmic-*`
 
