@@ -16,6 +16,7 @@ Currently an incomplete **pre-alpha**. Testing instructions below for various di
 * [cosmic-notifications](https://github.com/pop-os/cosmic-notifications)
 * [cosmic-osd](https://github.com/pop-os/cosmic-osd)
 * [cosmic-panel](https://github.com/pop-os/cosmic-panel)
+* [cosmic-player](https://github.com/pop-os/cosmic-player)
 * [cosmic-randr](https://github.com/pop-os/cosmic-randr)
 * [cosmic-session](https://github.com/pop-os/cosmic-session)
 * [cosmic-settings-daemon](https://github.com/pop-os/cosmic-settings-daemon)
