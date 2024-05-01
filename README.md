@@ -147,6 +147,16 @@ Installing via the preferred AUR helper is possible the usual way, e.g.:
 Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
 For a more detailled discussion consider the [relevant section in the Arch wiki](https://wiki.archlinux.org/title/COSMIC).
 
+## Installing on Fedora Linux
+Cosmic may be installed via a Fedora COPR repository.
+```
+dnf copr enable ryanabx/cosmic-epoch
+dnf install cosmic-desktop
+```
+
+Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
+For further information, you may check the [COPR page](https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/).
+
 ## Configuring COSMIC DE
 This is basic configuration to get you started. See individual projects repos above for details.
 
