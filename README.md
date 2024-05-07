@@ -115,7 +115,7 @@ We do our best to keep the referenced submodule commits in this repository build
 Notes on versioning and packaging all these components together properly will be added at a later stage once COSMIC DE gets its first release.
 
 ## Installing on Pop!_OS
-COSMIC DE is in heavy development and not ready for issue reports. Currently, GUIs are incomplete and don't match designs, desktop settings aren't available and bugs are obvious and known. You're seeing the sausage be made. Most configuration is currently in text files and would be familiar to i3/Sway users. A call for testing will be announced when the project is ready for reports. With that out of the way, feel free to jump in and have fun.
+COSMIC DE is near its first alpha release. Using and testing the pre-alpha is welcome. Bugs are and breakage is expected.
 
 #### Enable Wayland
 `sudo nano /etc/gdm3/custom.conf`
@@ -160,7 +160,7 @@ sudo systemctl restart gdm
 ```
 
 #### Install COSMIC
-`sudo apt install cosmic-*`
+`sudo apt install cosmic-session`
 
 After logging out, click on your user and there will be a sprocket at the bottom right. Change the setting to COSMIC. Proceed to log in.
 
@@ -196,11 +196,7 @@ sudo -e /etc/cosmic-comp/config.ron
 ```
 
 ###### Scaling
-Changing the scaling of the DE can be done in this file:
-
-```shell
-nano ~/.local/state/cosmic-comp/outputs.ron
-```
+Scaling can be changed in Settings > Displays
 
 ##### Screenshots
 Screenshots can now be taken with the COSMIC Screenshot tool, either with `Print Screen` key or by opening the COSMIC Screenshot utility from the launcher.
