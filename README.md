@@ -47,7 +47,6 @@ The COSMIC desktop environment requires a few dependencies:
 - libseat
 - libxkbcommon
 - libinput
-- libgtk
 - udev
 - dbus
 
