@@ -160,7 +160,7 @@ sudo systemctl restart gdm
 ```
 
 #### Install COSMIC
-`sudo apt install cosmic-*`
+`sudo apt install cosmic-*` or `sudo apt install '~ncosmic-.*'`
 
 After logging out, click on your user and there will be a sprocket at the bottom right. Change the setting to COSMIC. Proceed to log in.
 
