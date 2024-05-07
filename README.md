@@ -83,6 +83,7 @@ sudo apt install just rustc libglvnd-dev libwayland-dev libseat-dev libxkbcommon
 ### Testing
 
 The easiest way to test COSMIC DE currently is by building a systemd system extension (see `man systemd-sysext`).
+
 ```
 git clone --recurse-submodules https://github.com/pop-os/cosmic-epoch
 cd cosmic-epoch
@@ -92,6 +93,14 @@ just sysext
 This will create a system-extension called `cosmic-sysext`, that you can move (without renaming!) into e.g. `/var/lib/extensions`.
 After starting systemd-sysext.service (`sudo systemctl enable --now systemd-sysext`) and refreshing (`sudo systemd-sysext refresh`) or rebooting,
 *COSMIC* will be an available option in your favorite display manager.
+
+If you have SELinux enabled (e.g. on Fedora), the installed extension won't have the correct labels applied.
+To test COSMIC, you can temporarily disable it and restart `gdm` (note that this will close your running programs).
+
+```shell
+sudo setenforce 0
+sudo systemctl restart gdm
+```
 
 **Note**: An extension created this way will be linked against specific libraries on your system and will not work on other distributions.
 It also requires the previously mentioned libraries/dependencies at runtime to be installed in your system (the system extension does not carry these libraries).
@@ -124,15 +133,7 @@ WaylandEnable=true
 
 Reboot for this change to take effect.
 
-#### Disable SELinux
 
-If you have SELinux enabled (e.g. on Fedora), the installed extension won't have the correct labels applied.
-To test COSMIC, you can temporarily disable it and restart `gdm` (note that this will close your running programs).
-
-```shell
-sudo setenforce 0
-sudo systemctl restart gdm
-```
 
 #### Update udev rules for NVIDIA users
 
