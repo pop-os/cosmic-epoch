@@ -26,6 +26,7 @@ Currently an incomplete **pre-alpha**. Testing instructions below for various di
 * [cosmic-theme-editor](https://github.com/pop-os/cosmic-theme-editor)
 * [cosmic-workspaces-epoch](https://github.com/pop-os/cosmic-workspaces-epoch)
 * [xdg-desktop-portal-cosmic](https://github.com/pop-os/xdg-desktop-portal-cosmic)
+* [pop-launcher](https://github.com/pop-os/launcher)
 
 ### COSMIC libraries/crates
 
