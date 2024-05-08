@@ -124,7 +124,7 @@ We do our best to keep the referenced submodule commits in this repository build
 Notes on versioning and packaging all these components together properly will be added at a later stage once COSMIC DE gets its first release.
 
 ## Installing on Pop!_OS
-COSMIC DE is near its first alpha release. Using and testing the pre-alpha is welcome. Bugs are and breakage is expected.
+COSMIC DE is near its first alpha release. Using and testing the pre-alpha is welcome. Bugs and breakage are expected.
 
 #### Enable Wayland
 `sudo nano /etc/gdm3/custom.conf`
