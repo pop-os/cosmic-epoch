@@ -39,7 +39,7 @@ Currently an incomplete **pre-alpha**. Testing instructions below for various di
 ## Setup on distributions without packaging of cosmic components
 
 The COSMIC desktop environment requires a few dependencies:
-(This list does not try to be exhaustive, but rather tries to provide a decent starting point. For detailed instructions check out the individual projects):
+(This list does not try to be exhaustive, but rather tries to provide a decent starting point. For detailed instructions, check out the individual projects):
 
 - [just](https://github.com/casey/just)
 - rustc
@@ -113,7 +113,7 @@ It is thus no proper method for long term deployment.
 
 ### Packaging
 
-COSMIC DE is packaged for Pop!_OS. For reference look at the `debian` folders in the projects repositories.
+COSMIC DE is packaged for Pop!_OS. For reference, look at the `debian` folders in the projects repositories.
 These and the `justfile` inside this repository may be used as references on how to package COSMIC DE, though no backwards-compatibility guarantees are provided at this stage.
 
 ### Versioning
@@ -140,7 +140,7 @@ Reboot for this change to take effect.
 sudo nano /usr/lib/udev/rules.d/61-gdm.rules
 ```
 
-Looks for `LABEL="gdm_prefer_xorg"` and `LABEL="gdm_disable_wayland"`, add `#` to the `RUN` statement so it will look like this
+Look for `LABEL="gdm_prefer_xorg"` and `LABEL="gdm_disable_wayland"`, add `#` to the `RUN` statement so it will look like this
 
 ```
 LABEL="gdm_prefer_xorg"
@@ -168,7 +168,7 @@ Installing via the preferred AUR helper is possible the usual way, e.g.:
 `paru -S cosmic-epoch-git`
 
 Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
-For a more detailled discussion consider the [relevant section in the Arch wiki](https://wiki.archlinux.org/title/COSMIC).
+For a more detailed discussion, consider the [relevant section in the Arch wiki](https://wiki.archlinux.org/title/COSMIC).
 
 ## Installing on Fedora Linux
 Cosmic may be installed via a Fedora COPR repository.
