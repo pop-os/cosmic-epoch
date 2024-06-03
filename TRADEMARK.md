@@ -1,4 +1,4 @@
-### COSMIC Trademark Policy
+# COSMIC Trademark Policy
 
 This document outlines the policy regarding the use of the COSMIC desktop environment trademark owned by System76. The purpose of this policy is to ensure that the COSMIC trademark is used correctly and consistently, maintaining the integrity and reputation of the COSMIC brand.
 
