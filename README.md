@@ -180,37 +180,6 @@ dnf install cosmic-desktop
 Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
 For further information, you may check the [COPR page](https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/).
 
-## Configuring COSMIC DE
-This is basic configuration to get you started. See individual projects repos above for details.
-
-Access cosmic-launcher with `Super` and cosmic-applibrary with `Super+a`.
-
-##### COSMIC COMP
-COSMIC Comp is the compositor for COSMIC DE. Its config file is located at `/etc/cosmic-comp/config.ron`. You can enable tiling by default by setting `tiling_enabled: true,` at the bottom of the file. Super+y will toggle tiling per workspace.
-
-```shell
-sudo mkdir /etc/cosmic-comp
-sudo cp cosmic-comp/config.ron /etc/cosmic-comp
-sudo -e /etc/cosmic-comp/config.ron
-```
-
-###### Scaling
-Scaling can be changed in Settings > Displays
-
-##### Screenshots
-Screenshots can now be taken with the COSMIC Screenshot tool, either with `Print Screen` key or by opening the COSMIC Screenshot utility from the launcher.
-
-##### Panel Configuration
-Panels can now be configured in the COSMIC Settings app under Desktop > Desktop and Panel > Panel/Dock
-
-##### Desktop Wallpaper
-Wallpaper can now be configured in the COSMIC Settings app under Desktop > Wallpapers
-
-##### WebGL on NVIDIA
-WebGL on NVIDIA is currently [broken](https://github.com/pop-os/cosmic-comp/issues/84) but will work in Google Chrome using software rendering.
-
-`flatpak install com.google.Chrome`
-
 ## Contact
 - [Mattermost](https://chat.pop-os.org/)
 - [Twitter](https://twitter.com/pop_os_official)
