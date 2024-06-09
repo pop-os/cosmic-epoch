@@ -180,6 +180,19 @@ dnf install cosmic-desktop
 Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
 For further information, you may check the [COPR page](https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/).
 
+## Installing on openSUSE tumbleweed 
+Cosmic can be installed by adding rrahl0 repo with opi.
+```
+opi xdg-desktop-portal-cosmic
+```
+After installing keep the repo, then install the rest of the packages with the following command.
+```
+zypper in cosmic-* pop-*
+```
+
+Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
+For further information, you may check the [OBS page](https://build.opensuse.org/project/show/home:rrahl0:COSMIC).
+
 ## Contact
 - [Mattermost](https://chat.pop-os.org/)
 - [Twitter](https://twitter.com/pop_os_official)
