@@ -181,17 +181,17 @@ Then log out, click on your user, and a sprocket at the bottom right shows an ad
 For further information, you may check the [COPR page](https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/).
 
 ## Installing on openSUSE tumbleweed 
-Cosmic can be installed by adding rrahl0 repo with opi.
+Cosmic can be installed by adding X11:COSMIC:Factory repo with opi.
 ```
 opi xdg-desktop-portal-cosmic
 ```
-After installing keep the repo, then install the rest of the packages with the following command.
+Selcet X11:COSMIC:Factory, after installing keep the repo, then install the rest of the packages with the following command.
 ```
-zypper in cosmic-* pop-*
+zypper in cosmic-*
 ```
 
 Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
-For further information, you may check the [OBS page](https://build.opensuse.org/project/show/home:rrahl0:COSMIC).
+For further information, you may check the [OBS page](https://build.opensuse.org/project/show/X11:COSMIC:Factory).
 
 ## Contact
 - [Mattermost](https://chat.pop-os.org/)
