@@ -2,7 +2,12 @@ set dotenv-load
 just := just_executable()
 make := `which make`
 
-build:
+# Add Git LFS initialization and pulling at the beginning of the build process
+init-lfs:
+    git lfs install
+    git lfs pull
+
+build: init-lfs
     mkdir -p build
     {{ just }} cosmic-applets/build-release
     {{ just }} cosmic-applibrary/build-release
