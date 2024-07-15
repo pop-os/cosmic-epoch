@@ -167,6 +167,30 @@ After logging out, click on your user and there will be a sprocket at the bottom
 Installing via the preferred AUR helper is possible the usual way, e.g.:
 `paru -S cosmic-session-git` or `yay -S cosmic-session-git`
 
+Important: Git LFS which is used in cosmic-greeter-git won't build since git lfs in makepkg on Arch Linux is not directly supported. This Issue can be resolved with using the build tool 'makepkg-git-lfs-proto'
+from the AUR ('yay -S makepkg-git-lfs-proto'). 
+This tool then should be used when building.
+
+There are 2 ways:
+1. You configure makepkg to use the tool on git lfs on its own.
+Add these variables to '/etc/makepkg.conf':
+'BUILDPKG=makepkg-git-lfs-proto
+BUILDMODULE=git-lfs'
+Then it will permanetly use the tool on all git lfs operations on your Arch System.
+
+Or
+
+2. You replace the PKGBUILD file on a cloned Version of the cosmic-greeter-git.
+'git clone https://github.com/pop-os/cosmic-greeter.git'
+Then change Directory to the cloned Repository.
+'cd cosmic-greeter-git'
+And replace the PKGBUILD with the one Quackdoc made: https://github.com/Quackdoc/pkgbuild-scripts/blob/Master/cosmic-epoch/cosmic-greeter-git/PKGBUILD
+After that you can build the cosmic-greeter-git with:
+'makepkg -si'
+You can then continue regulary with the AUR Helper at the Beginning of this Install for Arch.
+
+
+
 Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
 For a more detailed discussion, consider the [relevant section in the Arch wiki](https://wiki.archlinux.org/title/COSMIC).
 
