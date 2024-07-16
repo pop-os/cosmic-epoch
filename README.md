@@ -180,8 +180,9 @@ Then it will permanetly use the tool on all git lfs operations on your Arch Syst
 
 Or
 
-2. You replace the PKGBUILD file on a cloned Version of the cosmic-greeter-git.
-'git clone https://github.com/pop-os/cosmic-greeter.git'
+2. You replace the PKGBUILD file on a AUR-Helper Version of the cosmic-greeter-git.
+It will ask for manuell Intervention.
+'yay -S cosmic-greeter-git'
 Then change Directory to the cloned Repository.
 'cd cosmic-greeter-git'
 And replace the PKGBUILD with the one Quackdoc made: https://github.com/Quackdoc/pkgbuild-scripts/blob/Master/cosmic-epoch/cosmic-greeter-git/PKGBUILD
