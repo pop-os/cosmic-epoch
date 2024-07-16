@@ -60,7 +60,7 @@
     branch = master
 [submodule "cosmic-greeter"]
     path = cosmic-greeter
-    url = https://github.com/pop-os/cosmic-greeter
+    url = https://github.com/silverhadch/cosmic-greeter
     branch = master
 [submodule "cosmic-screenshot"]
     path = cosmic-screenshot
