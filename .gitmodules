@@ -12,7 +12,7 @@
     branch = master
 [submodule "cosmic-applets"]
     path = cosmic-applets
-    url = https://github.com/pop-os/cosmic-applets
+    url = https://github.com/silverhadch/cosmic-applets
     branch = master
 [submodule "cosmic-applibrary"]
     path = cosmic-applibrary
