@@ -164,7 +164,8 @@ sudo systemctl restart gdm
 After logging out, click on your user and there will be a sprocket at the bottom right. Change the setting to COSMIC. Proceed to log in.
 
 ## Installing on Arch Linux
-There are Issues with the build process in the AUR package until its fixed use the Arch-specific Fork and Follow its Instructions. When the AUR Packge is fixed this Instructions for the Fork will be removed or the offical package is released. https://github.com/silverhadch/cosmic-epoch-archbuild
+There are Issues with the build process in the AUR package until its fixed use this Fix and follow its Instructions. When the AUR Packge is fixed this Instructions for the Fix will be removed. 
+https://github.com/silverhadch/cosmic-de-archbuild/tree/main
 
 Old Instructions:
 Installing via the preferred AUR helper is possible the usual way, e.g.:
