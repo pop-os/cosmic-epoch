@@ -4,13 +4,13 @@ Currently an incomplete **pre-alpha**. Testing instructions below for various di
 
 
 ## Components of COSMIC Desktop
-* [cosmic-applets](https://github.com/pop-os/cosmic-applets)
+* [cosmic-applets](https://github.com/silverhadch/cosmic-applets)
 * [cosmic-applibrary](https://github.com/pop-os/cosmic-applibrary)
 * [cosmic-bg](https://github.com/pop-os/cosmic-bg)
 * [cosmic-comp](https://github.com/pop-os/cosmic-comp)
 * [cosmic-edit](https://github.com/pop-os/cosmic-edit)
 * [cosmic-files](https://github.com/pop-os/cosmic-files)
-* [cosmic-greeter](https://github.com/pop-os/cosmic-greeter)
+* [cosmic-greeter](https://github.com/silverhadch/cosmic-greeter)
 * [cosmic-icons](https://github.com/pop-os/cosmic-icons)
 * [cosmic-launcher](https://github.com/pop-os/cosmic-launcher)
 * [cosmic-notifications](https://github.com/pop-os/cosmic-notifications)
@@ -66,20 +66,6 @@ optionally (though the build-system might currently require these libraries):
 
 Note: `libfontconfig`, `libfreetype`, and `lld` are packages specific to Linux distributions. You may need to find the equivalent version for your distribution if you are not using Pop!_OS.
 
-The required ones can be installed with:
-```
-sudo apt install just rustc libglvnd-dev libwayland-dev libseat-dev libxkbcommon-dev libinput-dev udev dbus libdbus-1-dev libpam0g-dev libpixman-1-dev libssl-dev libflatpak-dev -y
-```
-
-and the optional ones with:
-```
-sudo apt install libsystemd-dev libpulse-dev pop-launcher libexpat1-dev libfontconfig-dev libfreetype-dev mold cargo libgbm-dev libclang-dev libpipewire-0.3-dev -y
-```
-
-They can be installed all at once with:
-```
-sudo apt install just rustc libglvnd-dev libwayland-dev libseat-dev libxkbcommon-dev libinput-dev udev dbus libdbus-1-dev libsystemd-dev libpixman-1-dev libssl-dev libflatpak-dev libpulse-dev pop-launcher libexpat1-dev libfontconfig-dev libfreetype-dev mold cargo libgbm-dev libclang-dev libpipewire-0.3-dev libpam0g-dev -y
-```
 
 ### Testing
 
@@ -123,45 +109,6 @@ We do our best to keep the referenced submodule commits in this repository build
 
 Notes on versioning and packaging all these components together properly will be added at a later stage once COSMIC DE gets its first release.
 
-## Installing on Pop!_OS
-COSMIC DE is near its first alpha release. Using and testing the pre-alpha is welcome. Bugs and breakage are expected.
-
-#### Enable Wayland
-`sudo nano /etc/gdm3/custom.conf`
-
-Change to true
-WaylandEnable=true
-
-Reboot for this change to take effect.
-
-#### Update udev rules for NVIDIA users
-
-```shell
-sudo nano /usr/lib/udev/rules.d/61-gdm.rules
-```
-
-Look for `LABEL="gdm_prefer_xorg"` and `LABEL="gdm_disable_wayland"`, add `#` to the `RUN` statement so it will look like this
-
-```
-LABEL="gdm_prefer_xorg"
-#RUN+="/usr/libexec/gdm-runtime-config set daemon PreferredDisplayServer xorg"
-GOTO="gdm_end"
-
-LABEL="gdm_disable_wayland"
-#RUN+="/usr/libexec/gdm-runtime-config set daemon WaylandEnable false"
-GOTO="gdm_end"
-```
-
-Restart gdm
-
-```shell
-sudo systemctl restart gdm
-```
-
-#### Install COSMIC
-`sudo apt install cosmic-session`
-
-After logging out, click on your user and there will be a sprocket at the bottom right. Change the setting to COSMIC. Proceed to log in.
 
 ## Installing on Arch Linux
 Installing via the preferred AUR helper is possible the usual way, e.g.:
@@ -190,20 +137,9 @@ After that you can build the cosmic-greeter-git with:
 'makepkg -si'
 You can then continue regulary with the AUR Helper at the Beginning of this Install for Arch.
 
-
-
 Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
 For a more detailed discussion, consider the [relevant section in the Arch wiki](https://wiki.archlinux.org/title/COSMIC).
 
-## Installing on Fedora Linux
-Cosmic may be installed via a Fedora COPR repository.
-```
-dnf copr enable ryanabx/cosmic-epoch
-dnf install cosmic-desktop
-```
-
-Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
-For further information, you may check the [COPR page](https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/).
 
 ## Contact
 - [Mattermost](https://chat.pop-os.org/)
