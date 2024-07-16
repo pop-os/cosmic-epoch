@@ -164,6 +164,7 @@ sudo systemctl restart gdm
 After logging out, click on your user and there will be a sprocket at the bottom right. Change the setting to COSMIC. Proceed to log in.
 
 ## Installing on Arch Linux
+Git-lfs and an AUR-Helper is necessary. 
 Installing via the preferred AUR helper is possible the usual way, e.g.:
 `paru -S cosmic-session-git` or `yay -S cosmic-session-git`
 Important: Git LFS which is used in cosmic-greeter-git won't build since git lfs in makepkg on Arch Linux is not directly supported. This Issue can be resolved with using the build tool 'makepkg-git-lfs-proto' from the AUR ('yay -S makepkg-git-lfs-proto'). This tool then should be used when building.
