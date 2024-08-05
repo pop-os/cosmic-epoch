@@ -27,6 +27,7 @@ jobs:
         cargo
         clang
         desktop-file-utils
+        ffmpeg
         git
         gtk3
         gtk4
