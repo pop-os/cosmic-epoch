@@ -185,7 +185,7 @@ Cosmic can be installed by adding X11:COSMIC:Factory repo with opi.
 ```
 opi patterns-cosmic
 ```
-Selcet X11:COSMIC:Factory, after installing keep the repo.
+Select X11:COSMIC:Factory, after installing keep the repo.
 
 Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
 For further information, you may check the [OBS page](https://build.opensuse.org/project/show/X11:COSMIC:Factory).
