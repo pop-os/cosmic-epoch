@@ -129,8 +129,10 @@ COSMIC DE is near its first alpha release. Using and testing the pre-alpha is we
 #### Enable Wayland
 `sudo nano /etc/gdm3/custom.conf`
 
-Change to true
+Change `WaylandEnable` to `true`:
+```
 WaylandEnable=true
+```
 
 Reboot for this change to take effect.
 
@@ -140,7 +142,7 @@ Reboot for this change to take effect.
 sudo nano /usr/lib/udev/rules.d/61-gdm.rules
 ```
 
-Look for `LABEL="gdm_prefer_xorg"` and `LABEL="gdm_disable_wayland"`, add `#` to the `RUN` statement so it will look like this
+Look for `LABEL="gdm_prefer_xorg"` and `LABEL="gdm_disable_wayland"`. Add `#` to the `RUN` statements so they look like this:
 
 ```
 LABEL="gdm_prefer_xorg"
