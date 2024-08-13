@@ -1,6 +1,6 @@
 # COSMIC Desktop
 
-Currently an incomplete **pre-alpha**. Testing instructions below for various distributions.
+Currently an incomplete **alpha**. Testing instructions below for various distributions.
 
 
 ## Components of COSMIC Desktop
