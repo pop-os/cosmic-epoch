@@ -164,8 +164,7 @@ sudo systemctl restart gdm
 After logging out, click on your user and there will be a sprocket at the bottom right. Change the setting to COSMIC. Proceed to log in.
 
 ## Installing on Arch Linux
-Installing via the preferred AUR helper is possible the usual way, e.g.:
-`paru -S cosmic-session-git` or `yay -S cosmic-session-git`
+`sudo pacman -S cosmic`
 
 Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
 For a more detailed discussion, consider the [relevant section in the Arch wiki](https://wiki.archlinux.org/title/COSMIC).
