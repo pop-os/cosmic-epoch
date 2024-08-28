@@ -180,6 +180,18 @@ dnf install cosmic-desktop
 Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
 For further information, you may check the [COPR page](https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/).
 
+## Installing on Gentoo Linux
+COSMIC can be installed on Gentoo via a custom overlay. Add the overlay using your preferred overlay manager (such as eselect), and then install the desktop environment:
+
+`eselect repository add cosmic-overlay git https://github.com/fsvm88/cosmic-overlay.git`
+
+Next, install the COSMIC desktop environment and its associated themes:
+
+`emerge -1 cosmic-meta pop-theme-meta -pv`
+
+Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
+For further information, you may check the [Overlay Repository](https://github.com/fsvm88/cosmic-overlay).
+
 ## Contact
 - [Mattermost](https://chat.pop-os.org/)
 - [Twitter](https://twitter.com/pop_os_official)
