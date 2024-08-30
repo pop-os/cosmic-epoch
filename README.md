@@ -1,6 +1,6 @@
 # COSMIC Desktop
 
-Currently an incomplete **pre-alpha**. Testing instructions below for various distributions.
+Currently an incomplete **alpha**. Testing instructions below for various distributions.
 
 
 ## Components of COSMIC Desktop
@@ -124,7 +124,7 @@ We do our best to keep the referenced submodule commits in this repository build
 Notes on versioning and packaging all these components together properly will be added at a later stage once COSMIC DE gets its first release.
 
 ## Installing on Pop!_OS
-COSMIC DE is near its first alpha release. Using and testing the pre-alpha is welcome. Bugs and breakage are expected.
+COSMIC DE is in its first alpha release. Using and testing the alpha is welcome. Bugs and breakage are expected.
 
 #### Enable Wayland
 `sudo nano /etc/gdm3/custom.conf`
@@ -164,8 +164,8 @@ sudo systemctl restart gdm
 After logging out, click on your user and there will be a sprocket at the bottom right. Change the setting to COSMIC. Proceed to log in.
 
 ## Installing on Arch Linux
-Installing via the preferred AUR helper is possible the usual way, e.g.:
-`paru -S cosmic-epoch-git`
+Install via [cosmic-session](https://archlinux.org/packages/extra/x86_64/cosmic-session/) or the [cosmic](https://archlinux.org/groups/x86_64/cosmic/) group, e.g.:
+`pacman -S cosmic-session` or `pacman -S cosmic`
 
 Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
 For a more detailed discussion, consider the [relevant section in the Arch wiki](https://wiki.archlinux.org/title/COSMIC).
@@ -189,6 +189,18 @@ Select X11:COSMIC:Factory, after installing keep the repo.
 
 Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
 For further information, you may check the [OBS page](https://build.opensuse.org/project/show/X11:COSMIC:Factory).
+
+## Installing on Gentoo Linux
+COSMIC can be installed on Gentoo via a custom overlay. Add the overlay using your preferred overlay manager (such as eselect), and then install the desktop environment:
+
+`eselect repository add cosmic-overlay git https://github.com/fsvm88/cosmic-overlay.git`
+
+Next, install the COSMIC desktop environment and its associated themes:
+
+`emerge -1 cosmic-meta pop-theme-meta -pv`
+
+Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
+For further information, you may check the [Overlay Repository](https://github.com/fsvm88/cosmic-overlay).
 
 ## Contact
 - [Mattermost](https://chat.pop-os.org/)
