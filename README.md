@@ -1,6 +1,6 @@
 # COSMIC Desktop
 
-Currently an incomplete **pre-alpha**. Testing instructions below for various distributions.
+Currently an incomplete **alpha**. Testing instructions below for various distributions.
 
 
 ## Components of COSMIC Desktop
@@ -18,14 +18,16 @@ Currently an incomplete **pre-alpha**. Testing instructions below for various di
 * [cosmic-panel](https://github.com/pop-os/cosmic-panel)
 * [cosmic-player](https://github.com/pop-os/cosmic-player)
 * [cosmic-randr](https://github.com/pop-os/cosmic-randr)
+* [cosmic-screenshot](https://github.com/pop-os/cosmic-screenshot)
 * [cosmic-session](https://github.com/pop-os/cosmic-session)
-* [cosmic-settings-daemon](https://github.com/pop-os/cosmic-settings-daemon)
 * [cosmic-settings](https://github.com/pop-os/cosmic-settings)
+* [cosmic-settings-daemon](https://github.com/pop-os/cosmic-settings-daemon)
 * [cosmic-store](https://github.com/pop-os/cosmic-store)
 * [cosmic-term](https://github.com/pop-os/cosmic-term)
 * [cosmic-theme-editor](https://github.com/pop-os/cosmic-theme-editor)
 * [cosmic-workspaces-epoch](https://github.com/pop-os/cosmic-workspaces-epoch)
 * [xdg-desktop-portal-cosmic](https://github.com/pop-os/xdg-desktop-portal-cosmic)
+* [pop-launcher](https://github.com/pop-os/launcher)
 
 ### COSMIC libraries/crates
 
@@ -38,7 +40,7 @@ Currently an incomplete **pre-alpha**. Testing instructions below for various di
 ## Setup on distributions without packaging of cosmic components
 
 The COSMIC desktop environment requires a few dependencies:
-(This list does not try to be exhaustive, but rather tries to provide a decent starting point. For detailed instructions check out the individual projects):
+(This list does not try to be exhaustive, but rather tries to provide a decent starting point. For detailed instructions, check out the individual projects):
 
 - [just](https://github.com/casey/just)
 - rustc
@@ -47,7 +49,6 @@ The COSMIC desktop environment requires a few dependencies:
 - libseat
 - libxkbcommon
 - libinput
-- libgtk
 - udev
 - dbus
 
@@ -68,22 +69,23 @@ Note: `libfontconfig`, `libfreetype`, and `lld` are packages specific to Linux d
 
 The required ones can be installed with:
 ```
-sudo apt install just rustc libglvnd-dev libwayland-dev libseat-dev libxkbcommon-dev libinput-dev libgtk-4-1 udev dbus libdbus-1-dev libpam0g-dev -y
+sudo apt install just rustc libglvnd-dev libwayland-dev libseat-dev libxkbcommon-dev libinput-dev udev dbus libdbus-1-dev libpam0g-dev libpixman-1-dev libssl-dev libflatpak-dev -y
 ```
 
 and the optional ones with:
 ```
-sudo apt install libsystemd-dev libpulse-dev pop-launcher libexpat1-dev libfontconfig-dev libfreetype-dev lld cargo libgbm-dev libclang-dev libpipewire-0.3-dev -y
+sudo apt install libsystemd-dev libpulse-dev pop-launcher libexpat1-dev libfontconfig-dev libfreetype-dev mold cargo libgbm-dev libclang-dev libpipewire-0.3-dev -y
 ```
 
 They can be installed all at once with:
 ```
-sudo apt install just rustc libglvnd-dev libwayland-dev libseat-dev libxkbcommon-dev libinput-dev libgtk-4-1 udev dbus libdbus-1-dev libsystemd-dev libpulse-dev pop-launcher libexpat1-dev libfontconfig-dev libfreetype-dev lld cargo libgbm-dev libclang-dev libpipewire-0.3-dev libpam0g-dev -y
+sudo apt install just rustc libglvnd-dev libwayland-dev libseat-dev libxkbcommon-dev libinput-dev udev dbus libdbus-1-dev libsystemd-dev libpixman-1-dev libssl-dev libflatpak-dev libpulse-dev pop-launcher libexpat1-dev libfontconfig-dev libfreetype-dev mold cargo libgbm-dev libclang-dev libpipewire-0.3-dev libpam0g-dev -y
 ```
 
 ### Testing
 
 The easiest way to test COSMIC DE currently is by building a systemd system extension (see `man systemd-sysext`).
+
 ```
 git clone --recurse-submodules https://github.com/pop-os/cosmic-epoch
 cd cosmic-epoch
@@ -93,6 +95,14 @@ just sysext
 This will create a system-extension called `cosmic-sysext`, that you can move (without renaming!) into e.g. `/var/lib/extensions`.
 After starting systemd-sysext.service (`sudo systemctl enable --now systemd-sysext`) and refreshing (`sudo systemd-sysext refresh`) or rebooting,
 *COSMIC* will be an available option in your favorite display manager.
+
+If you have SELinux enabled (e.g. on Fedora), the installed extension won't have the correct labels applied.
+To test COSMIC, you can temporarily disable it and restart `gdm` (note that this will close your running programs).
+
+```shell
+sudo setenforce 0
+sudo systemctl restart gdm
+```
 
 **Note**: An extension created this way will be linked against specific libraries on your system and will not work on other distributions.
 It also requires the previously mentioned libraries/dependencies at runtime to be installed in your system (the system extension does not carry these libraries).
@@ -104,7 +114,7 @@ It is thus no proper method for long term deployment.
 
 ### Packaging
 
-COSMIC DE is packaged for Pop!_OS. For reference look at the `debian` folders in the projects repositories.
+COSMIC DE is packaged for Pop!_OS. For reference, look at the `debian` folders in the projects repositories.
 These and the `justfile` inside this repository may be used as references on how to package COSMIC DE, though no backwards-compatibility guarantees are provided at this stage.
 
 ### Versioning
@@ -115,74 +125,85 @@ We do our best to keep the referenced submodule commits in this repository build
 Notes on versioning and packaging all these components together properly will be added at a later stage once COSMIC DE gets its first release.
 
 ## Installing on Pop!_OS
-COSMIC DE is in heavy development and not ready for issue reports. Currently, GUIs are incomplete and don't match designs, desktop settings aren't available and bugs are obvious and known. You're seeing the sausage be made. Most configuration is currently in text files and would be familiar to i3/Sway users. A call for testing will be announced when the project is ready for reports. With that out of the way, feel free to jump in and have fun.
+COSMIC DE is in its first alpha release. Using and testing the alpha is welcome. Bugs and breakage are expected.
 
 #### Enable Wayland
 `sudo nano /etc/gdm3/custom.conf`
 
-Change to true
+Change `WaylandEnable` to `true`:
+```
 WaylandEnable=true
+```
 
 Reboot for this change to take effect.
 
-#### Disable SELinux
-
-If you have SELinux enabled (e.g. on Fedora), the installed extension won't have the correct labels applied.
-To test COSMIC, you can temporarily disable it and restart `gdm` (note that this will close your running programs).
+#### Update udev rules for NVIDIA users
 
 ```shell
-sudo setenforce 0
+sudo nano /usr/lib/udev/rules.d/61-gdm.rules
+```
+
+Look for `LABEL="gdm_prefer_xorg"` and `LABEL="gdm_disable_wayland"`. Add `#` to the `RUN` statements so they look like this:
+
+```
+LABEL="gdm_prefer_xorg"
+#RUN+="/usr/libexec/gdm-runtime-config set daemon PreferredDisplayServer xorg"
+GOTO="gdm_end"
+
+LABEL="gdm_disable_wayland"
+#RUN+="/usr/libexec/gdm-runtime-config set daemon WaylandEnable false"
+GOTO="gdm_end"
+```
+
+Restart gdm
+
+```shell
 sudo systemctl restart gdm
 ```
 
 #### Install COSMIC
-`sudo apt install cosmic-*`
+`sudo apt install cosmic-session`
 
 After logging out, click on your user and there will be a sprocket at the bottom right. Change the setting to COSMIC. Proceed to log in.
 
 ## Installing on Arch Linux
-Installing via the preferred AUR helper is possible the usual way, e.g.:
-`paru -S cosmic-epoch-git`
+Install via [cosmic-session](https://archlinux.org/packages/extra/x86_64/cosmic-session/) or the [cosmic](https://archlinux.org/groups/x86_64/cosmic/) group, e.g.:
+`pacman -S cosmic-session` or `pacman -S cosmic`
 
 Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
-For a more detailled discussion consider the [relevant section in the Arch wiki](https://wiki.archlinux.org/title/COSMIC).
+For a more detailed discussion, consider the [relevant section in the Arch wiki](https://wiki.archlinux.org/title/COSMIC).
 
-## Configuring COSMIC DE
-This is basic configuration to get you started. See individual projects repos above for details.
-
-Access cosmic-launcher with `Super` and cosmic-applibrary with `Super+a`.
-
-##### COSMIC COMP
-COSMIC Comp is the compositor for COSMIC DE. Its config file is located at `/etc/cosmic-comp/config.ron`. You can enable tiling by default by setting `tiling_enabled: true,` at the bottom of the file. Super+y will toggle tiling per workspace.
-
-```shell
-sudo mkdir /etc/cosmic-comp
-sudo cp cosmic-comp/config.ron /etc/cosmic-comp
-sudo -e /etc/cosmic-comp/config.ron
+## Installing on Fedora Linux
+Cosmic may be installed via a Fedora COPR repository.
+```
+dnf copr enable ryanabx/cosmic-epoch
+dnf install cosmic-desktop
 ```
 
-###### Scaling
-Changing the scaling of the DE can be done in this file:
+Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
+For further information, you may check the [COPR page](https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/).
 
-```shell
-nano ~/.local/state/cosmic-comp/outputs.ron
+## Installing on openSUSE tumbleweed 
+Cosmic can be installed by adding X11:COSMIC:Factory repo with opi.
 ```
+opi patterns-cosmic
+```
+Select X11:COSMIC:Factory, after installing keep the repo.
 
-##### Screenshots
-`sudo apt install ksnip qtwayland5`
+Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
+For further information, you may check the [OBS page](https://build.opensuse.org/project/show/X11:COSMIC:Factory).
 
-Add `(modifiers: [], key: "Print"): Spawn("ksnip -t"),` to `/etc/cosmic-comp/config.ron`. The screenshot will open in a separate window for cropping and saving.
+## Installing on Gentoo Linux
+COSMIC can be installed on Gentoo via a custom overlay. Add the overlay using your preferred overlay manager (such as eselect), and then install the desktop environment:
 
-##### Panel Configuration
-Panels can now be configured in the COSMIC Settings app under Desktop > Desktop and Panel > Panel/Dock
+`eselect repository add cosmic-overlay git https://github.com/fsvm88/cosmic-overlay.git`
 
-##### Desktop Wallpaper
-Wallpaper can now be configured in the COSMIC Settings app under Desktop > Wallpapers
+Next, install the COSMIC desktop environment and its associated themes:
 
-##### WebGL on NVIDIA
-WebGL on NVIDIA is currently [broken](https://github.com/pop-os/cosmic-comp/issues/84) but will work in Google Chrome using software rendering.
+`emerge -1 cosmic-meta pop-theme-meta -pv`
 
-`flatpak install com.google.Chrome`
+Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
+For further information, you may check the [Overlay Repository](https://github.com/fsvm88/cosmic-overlay).
 
 ## Contact
 - [Mattermost](https://chat.pop-os.org/)
