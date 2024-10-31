@@ -90,3 +90,7 @@
 	path = cosmic-wallpapers
 	url = https://github.com/pop-os/cosmic-wallpapers.git
 	branch = master
+[submodule "cosmic-idle"]
+	path = cosmic-idle
+	url = https://github.com/pop-os/cosmic-idle.git
+	branch = master
