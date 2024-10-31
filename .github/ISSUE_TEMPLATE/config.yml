@@ -51,11 +51,7 @@ contact_links:
   - name: cosmic-applibrary
     url: https://github.com/pop-os/cosmic-applibrary/issues
     about: It is the application launched with super-a, that let you see what app are in your system, and launch them.
-    
-  - name: cosmic-store
-    url: https://github.com/pop-os/cosmic-store/issues
-    about: This is the issue tracker for COSMIC Store. If you see issues with the app store, report them here.
-    
+  
   - name: pop-launcher
     url: https://github.com/pop-os/launcher/issues
     about: Launched with the super key. It lets you search in your application, and display the result in a list.
