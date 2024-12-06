@@ -173,10 +173,22 @@ Then log out, click on your user, and a sprocket at the bottom right shows an ad
 For a more detailed discussion, consider the [relevant section in the Arch wiki](https://wiki.archlinux.org/title/COSMIC).
 
 ## Installing on Fedora Linux
-Cosmic may be installed via a Fedora COPR repository.
+If you're using Fedora 41, Cosmic may be installed from the main Fedora repositories.
+```
+dnf install @cosmic-desktop-environment
+```
+
+If you're using Fedora 40 or want the nightly releases of Cosmic, it may be installed via a Fedora COPR repository.
 ```
 dnf copr enable ryanabx/cosmic-epoch
 dnf install cosmic-desktop
+```
+
+To migrate from the nightly releases to the tagged releases of Cosmic, you can use the following commands:
+```
+dnf remove cosmic-desktop
+dnf copr disable ryanabx/cosmic-epoch
+dnf install @cosmic-desktop-environment
 ```
 
 Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
