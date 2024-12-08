@@ -199,10 +199,10 @@ COSMIC can be installed on Gentoo via a custom overlay. Add the overlay using yo
 
 Next, install the COSMIC desktop environment and its associated themes:
 
-`emerge -1 cosmic-meta pop-theme-meta -pv`
+`emerge cosmic-meta pop-theme-meta`
 
 Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
-For further information, you may check the [Overlay Repository](https://github.com/fsvm88/cosmic-overlay).
+For further information, you may check the [Gentoo Wiki](https://wiki.gentoo.org/wiki/COSMIC) or [Overlay Repository](https://github.com/fsvm88/cosmic-overlay) 
 
 ## Contact
 - [Mattermost](https://chat.pop-os.org/)
