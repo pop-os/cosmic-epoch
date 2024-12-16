@@ -122,9 +122,13 @@ Cosmic may be installed on Fedora 41+.
 ```
 dnf install @cosmic-desktop-environment
 ```
+Or one can use the Nightly COPR builds
+```
+dnf copr enable ryanabx/cosmic-epoch && dnf install cosmic-desktop
+```
 
 Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
-For further information, you may check the [Fedora Wiki COSMIC SIG page](https://fedoraproject.org/wiki/SIGs/COSMIC).
+For further information, you may check the [Fedora Wiki COSMIC SIG page](https://fedoraproject.org/wiki/SIGs/COSMIC), or the [COPR page](https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/).
 
 ## Installing on NixOS
 The COSMIC module on NixOS can be enabled by adding the following lines to
