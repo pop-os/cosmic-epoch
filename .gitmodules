@@ -94,3 +94,7 @@
 	path = cosmic-idle
 	url = https://github.com/pop-os/cosmic-idle.git
 	branch = master
+[submodule "cosmic-player"]
+	path = cosmic-player
+	url = https://github.com/pop-os/cosmic-player.git
+	branch = master
