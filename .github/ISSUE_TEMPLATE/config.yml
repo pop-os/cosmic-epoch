@@ -1,0 +1,61 @@
+blank_issues_enabled: false
+contact_links:
+  - name: cosmic-applets
+    url: https://github.com/pop-os/cosmic-applets/issues
+    about: Concern all the applets living in the dock or the panel.
+
+  - name: cosmic-comp
+    url: https://github.com/pop-os/cosmic-comp/issues
+    about: Responsible for composing your windows on the screen. If you see issues with the tilling features or your multiple displays, this is likely the place to go.
+    
+  - name: cosmic-edit
+    url: https://github.com/pop-os/cosmic-edit/issues
+    about: This is the issue tracker for COSMIC Text Editor. If you see issues with the text editor, report them here.
+    
+  - name: cosmic-files
+    url: https://github.com/pop-os/cosmic-files/issues
+    about: This is the issue tracker for COSMIC Files. If you see issues while navigating files, this is the place to go.
+    
+  - name: cosmic-settings
+    url: https://github.com/pop-os/cosmic-settings/issues
+    about: This is the issue tracker for COSMIC Settings. If you see issues while changing settings, this is the place to go.
+    
+  - name: cosmic-store
+    url: https://github.com/pop-os/cosmic-store/issues
+    about: This is the issue tracker for COSMIC Store. If you see issues with the app store, report them here.
+    
+  - name: cosmic-term
+    url: https://github.com/pop-os/cosmic-term/issues
+    about: This is the issue tracker for COSMIC Terminal. If you see issues with the terminal, report them here.
+    
+  - name: cosmic-panel
+    url: https://github.com/pop-os/cosmic-panel/issues
+    about: Contains the code to manage the dock and panel applets. You can see it as the compositor of applets. It is also responsible to draw the panel and dock at the right place (bottom, left, ect..).
+
+  - name: cosmic-screenshot
+    url: https://github.com/pop-os/cosmic-screenshot/issues
+    about: This is the tool that help you take screenshots.
+
+  - name: cosmic-workspaces-epoch
+    url: https://github.com/pop-os/cosmic-workspaces-epoch/issues
+    about: Responsible for the workspace overview. If you have an issue with workspaces, this is the place to go.
+    
+  - name: cosmic-greeter
+    url: https://github.com/pop-os/cosmic-greeter/issues
+    about: When your session is locked, or not opened yet, this is the window that will be shown. Basically the login screen.
+    
+  - name: cosmic-osd
+    url: https://github.com/pop-os/cosmic-osd/issues
+    about: Cosmic on screen display. This is for example, the audio notification when you change the volume, or the brightness one.
+    
+  - name: cosmic-applibrary
+    url: https://github.com/pop-os/cosmic-applibrary/issues
+    about: It is the application launched with super-a, that let you see what app are in your system, and launch them.
+  
+  - name: cosmic-launcher
+    url: https://github.com/pop-os/cosmic-launcher/issues
+    about: Launched with the super key. It lets you search in your application, and display the result in a list.
+    
+  - name: cosmic-bg
+    url: https://github.com/pop-os/cosmic-bg/issues
+    about: If you notice issues with the wallpaper, this is the place to go.
