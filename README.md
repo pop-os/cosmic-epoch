@@ -183,6 +183,17 @@ dnf install cosmic-desktop
 Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
 For further information, you may check the [COPR page](https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/).
 
+## Installing on rpm-ostree based systems
+Cosmic may be installed via rebasing on rpm-ostree based systems.
+```
+rpm-ostree rebase ostree-unverified-registry:quay.io/fedora-ostree-desktops/cosmic-atomic:41
+```
+
+Optionally you can pin your current deployment as well to rollback to with:
+```
+sudo ostree admin pin 0
+```
+
 ## Installing on openSUSE tumbleweed 
 Cosmic can be installed by adding X11:COSMIC:Factory repo with opi.
 ```
