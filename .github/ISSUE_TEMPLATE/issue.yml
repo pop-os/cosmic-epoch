@@ -1,0 +1,69 @@
+# the name must be not too long
+name: Bug Report or Feature request
+description: Help you report issues in the right repo
+title: "Issue picker"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+
+        Here is a partial list of the COSMIC's repositories, with a description to help you choose the right one for your issue.
+        Please, don't forget to check if your issue hasn't been already reported.
+
+        _don't be afraid to make a mistake, your issue will be moved in case of error_
+
+        - [cosmic-applets](https://github.com/pop-os/cosmic-applets/issues)
+        Concern all the applets living in the dock or the panel.
+
+        - [cosmic-comp](https://github.com/pop-os/cosmic-comp/issues)
+        Responsible for composing your windows on the screen. If you see issues with the tilling features or your multiple displays, this is likely the place to go.
+
+        - [cosmic-edit](https://github.com/pop-os/cosmic-edit/issues)
+        The cosmic edit application.
+
+        - [cosmic-files](https://github.com/pop-os/cosmic-files/issues)
+        The file manager application.
+
+        - [cosmic-settings](https://github.com/pop-os/cosmic-settings/issues)
+        The settings application.
+
+        - [cosmic-store](https://github.com/pop-os/cosmic-store/issues)
+        The store application.
+
+        - [cosmic-term](https://github.com/pop-os/cosmic-term/issues)
+        The terminal application.
+
+        - [cosmic-panel](https://github.com/pop-os/cosmic-panel/issues)
+        Contains the code to manage the dock and panel applets. You can see it as the compositor of applets. It is also responsible to draw the panel and dock at the right place (bottom, left, ect..).
+
+        - [cosmic-screenshot](https://github.com/pop-os/cosmic-screenshot/issues)
+        This is the tool that help you take screenshots.
+        
+        - [cosmic-workspaces-epoch](https://github.com/pop-os/cosmic-workspaces-epoch/issues)
+        The workspace overview.
+
+        - [cosmic-greeter](https://github.com/pop-os/cosmic-greeter/issues)
+        When your session is locked, or not opened yet, this is the window that will be shown. Basically the login screen.
+
+        - [cosmic-osd](https://github.com/pop-os/cosmic-osd/issues)
+        Cosmic on screen display. This is for example, the audio notification when you change the volume, or the brightness one.
+
+        - [cosmic-applibrary](https://github.com/pop-os/cosmic-applibrary/issues)
+        It is the application launched with ctrl-a, that let you see what app are in your system, and launch them.
+
+        - [pop-launcher](https://github.com/pop-os/launcher/issues)
+        Launched with the windows key. It lets you search in your application, and display the result in a list.
+      
+        - [cosmic-bg](https://github.com/pop-os/cosmic-bg/issues)
+        If you notice issues with the wall-paper, this is the place to go.
+
+        If you still don't find a good fit for your issue, you can report it [here](https://github.com/pop-os/cosmic-epoch/issues/new).
+
+  # this is because github only accept issue with an input
+  - type: input
+    id: contact
+    attributes:
+      label: You can ignore this
+    validations:
+      required: false
