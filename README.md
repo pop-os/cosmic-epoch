@@ -124,10 +124,36 @@ We do our best to keep the referenced submodule commits in this repository build
 
 Notes on versioning and packaging all these components together properly will be added at a later stage once COSMIC DE gets its first release.
 
-## Installing on Pop!_OS
+## Installing on Pop!\_OS
+
 COSMIC DE is in its first alpha release. Using and testing the alpha is welcome. Bugs and breakage are expected.
 
-#### Enable Wayland
+### Pop!\_OS 24.04 Alpha
+
+The recommended way to test COSMIC Epoch on Pop!\_OS is by using the Pop!\_OS 24.04 LTS Alpha release. There are two ways to get the 24.04 Alpha:
+
+- Install it from the [latest Alpha release ISO](https://system76.com/cosmic/).
+- Upgrade an existing Pop!\_OS 22.04 installation using the following command: `pop-upgrade release upgrade -f`
+    - If you experience problems during the upgrade, please open an issue in the [pop-upgrade GitHub repository](https://github.com/pop-os/upgrade) or join the [Pop!\_OS Mattermost chat server](https://chat.pop-os.org) for assistance.
+
+Pop!\_OS 24.04 Alpha installations will be upgradable to the final 24.04 release, but some manual interventions may occasionally be required during development. If you're using Pop!\_OS 24.04 Alpha, then it's recommended to join the [Pop!\_OS Mattermost chat server](https://chat.pop-os.org) to receive news about the 24.04 development cycle.
+
+### Pop!\_OS 22.04
+
+Due to dependency requirements, **COSMIC Epoch is no longer receiving updates on Pop!\_OS 22.04 LTS.** It's no longer recommended to test COSMIC Epoch on Pop!\_OS 22.04 because the latest bug fixes and features are only available on newer distributions such as Pop!\_OS 24.04.
+
+Individual COSMIC applications work in the default GNOME session of Pop!\_OS 22.04. You can install individual COSMIC applications using the following command:
+
+```
+sudo apt install cosmic-edit cosmic-files cosmic-player cosmic-store cosmic-term
+```
+
+#### Old Release on 22.04
+
+An **older release** of the COSMIC Epoch desktop environment alpha is still available on Pop!\_OS 22.04 LTS. If you encounter bugs while testing COSMIC Epoch on Pop!\_OS 22.04, please check if they exist in Pop!\_OS 24.04 before reporting them. You can install the older release on 22.04 with these instructions:
+
+##### Enable Wayland
+
 `sudo nano /etc/gdm3/custom.conf`
 
 Change `WaylandEnable` to `true`:
@@ -137,7 +163,7 @@ WaylandEnable=true
 
 Reboot for this change to take effect.
 
-#### Update udev rules for NVIDIA users
+##### Update udev rules for NVIDIA users
 
 ```shell
 sudo nano /usr/lib/udev/rules.d/61-gdm.rules
@@ -161,7 +187,8 @@ Restart gdm
 sudo systemctl restart gdm
 ```
 
-#### Install COSMIC
+##### Install COSMIC
+
 `sudo apt install cosmic-session`
 
 After logging out, click on your user and there will be a sprocket at the bottom right. Change the setting to COSMIC. Proceed to log in.
