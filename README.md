@@ -12,6 +12,7 @@ Currently an incomplete **alpha**. Testing instructions below for various distri
 * [cosmic-files](https://github.com/pop-os/cosmic-files)
 * [cosmic-greeter](https://github.com/pop-os/cosmic-greeter)
 * [cosmic-icons](https://github.com/pop-os/cosmic-icons)
+* [cosmic-idle](https://github.com/pop-os/cosmic-idle)
 * [cosmic-launcher](https://github.com/pop-os/cosmic-launcher)
 * [cosmic-notifications](https://github.com/pop-os/cosmic-notifications)
 * [cosmic-osd](https://github.com/pop-os/cosmic-osd)
