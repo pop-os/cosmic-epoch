@@ -211,7 +211,25 @@ dnf install cosmic-desktop
 Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
 For further information, you may check the [COPR page](https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/).
 
-## Installing on openSUSE tumbleweed 
+## Installing on NixOS
+The COSMIC module on NixOS can be enabled by adding the following lines to
+your NixOS configuration file (`configuration.nix` or in your Flake):
+```nix
+  # Enable the login manager
+  services.displayManager.cosmic-greeter.enable = true;
+  # Enable the COSMIC DE itself
+  services.desktopManager.cosmic.enable = true;
+  # Enable XWayland support in COSMIC
+  services.desktopManager.cosmic.xwayland.enable = true;
+```
+
+While some packages like `cosmic-session` might be present in prior versions,
+the modules that add full support for COSMIC were added in **NixOS 25.05**.
+
+You can find more details in the [NixOS 25.05 release notes](https://nixos.org/manual/nixos/unstable/release-notes#sec-release-25.05).
+
+
+## Installing on openSUSE tumbleweed
 Cosmic can be installed by adding X11:COSMIC:Factory repo with opi.
 ```
 opi patterns-cosmic
