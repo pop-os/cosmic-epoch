@@ -27,6 +27,7 @@ build:
     {{ just }} cosmic-term/build-release
     {{ make }} -C cosmic-wallpapers all
     {{ make }} -C cosmic-workspaces-epoch all
+    {{ just }} pop-launcher/build-release
     {{ make }} -C xdg-desktop-portal-cosmic all
 
 install rootdir="" prefix="/usr/local": build
@@ -54,6 +55,7 @@ install rootdir="" prefix="/usr/local": build
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-term/install
     {{ make }} -C cosmic-wallpapers install DESTDIR={{rootdir}} prefix={{prefix}}
     {{ make }} -C cosmic-workspaces-epoch install DESTDIR={{rootdir}} prefix={{prefix}}
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} pop-launcher/install
     {{ make }} -C xdg-desktop-portal-cosmic install DESTDIR={{rootdir}} prefix={{prefix}}
 
 _mkdir dir:
@@ -95,4 +97,5 @@ clean:
     {{ just }} cosmic-term/clean
     {{ make }} -C cosmic-wallpapers clean
     rm -rf cosmic-workspaces-epoch/target
+    {{ just }} pop-launcher/clean
     rm -rf xdg-desktop-portal-cosmic/target

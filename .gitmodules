@@ -102,3 +102,7 @@
 	path = cosmic-initial-setup
 	url = https://github.com/pop-os/cosmic-initial-setup
 	branch = master
+[submodule "pop-launcher"]
+	path = pop-launcher
+	url = https://github.com/pop-os/launcher.git
+	branch = master
