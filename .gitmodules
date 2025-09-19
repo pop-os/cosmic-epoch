@@ -98,3 +98,7 @@
 	path = cosmic-player
 	url = https://github.com/pop-os/cosmic-player.git
 	branch = master
+[submodule "cosmic-initial-setup"]
+	path = cosmic-initial-setup
+	url = https://github.com/pop-os/cosmic-initial-setup
+	branch = master
