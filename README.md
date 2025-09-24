@@ -1,6 +1,6 @@
 # COSMIC Desktop
 
-Currently an incomplete **alpha**. Testing instructions below for various distributions.
+Currently near feature complete **beta**. We're in the final bug fixing stage for the first release. Testing instructions below for various distributions.
 
 
 ## Components of COSMIC Desktop
@@ -13,6 +13,7 @@ Currently an incomplete **alpha**. Testing instructions below for various distri
 * [cosmic-greeter](https://github.com/pop-os/cosmic-greeter)
 * [cosmic-icons](https://github.com/pop-os/cosmic-icons)
 * [cosmic-idle](https://github.com/pop-os/cosmic-idle)
+* [cosmic-initial-setup](https://github.com/pop-os/cosmic-initial-setup)
 * [cosmic-launcher](https://github.com/pop-os/cosmic-launcher)
 * [cosmic-notifications](https://github.com/pop-os/cosmic-notifications)
 * [cosmic-osd](https://github.com/pop-os/cosmic-osd)
@@ -36,6 +37,9 @@ Currently an incomplete **alpha**. Testing instructions below for various distri
 * [cosmic-text](https://github.com/pop-os/cosmic-text)
 * [cosmic-theme](https://github.com/pop-os/cosmic-theme)
 * [cosmic-time](https://github.com/pop-os/cosmic-time)
+
+### COSMIC toolkit for apps and applets
+
 * [libcosmic](https://github.com/pop-os/libcosmic)
 
 ## Setup on distributions without packaging of cosmic components
@@ -127,17 +131,17 @@ Notes on versioning and packaging all these components together properly will be
 
 ## Installing on Pop!\_OS
 
-COSMIC DE is in its first alpha release. Using and testing the alpha is welcome. Bugs and breakage are expected.
+COSMIC DE is in its first beta release. We're in a bug fixing stage of development with features largely complete for the first release. Using and testing the beta is welcome. 
 
-### Pop!\_OS 24.04 Alpha
+### Pop!\_OS 24.04 Beta
 
-The recommended way to test COSMIC Epoch on Pop!\_OS is by using the Pop!\_OS 24.04 LTS Alpha release. There are two ways to get the 24.04 Alpha:
+The recommended way to test COSMIC Epoch on Pop!\_OS is by using the Pop!\_OS 24.04 LTS Beta release. There are two ways to get the 24.04 Beta:
 
-- Install it from the [latest Alpha release ISO](https://system76.com/cosmic/).
+- Install it from the [latest Beta release ISO](https://system76.com/cosmic/).
 - Upgrade an existing Pop!\_OS 22.04 installation using the following command: `pop-upgrade release upgrade -f`
     - If you experience problems during the upgrade, please open an issue in the [pop-upgrade GitHub repository](https://github.com/pop-os/upgrade) or join the [Pop!\_OS Mattermost chat server](https://chat.pop-os.org) for assistance.
 
-Pop!\_OS 24.04 Alpha installations will be upgradable to the final 24.04 release, but some manual interventions may occasionally be required during development. If you're using Pop!\_OS 24.04 Alpha, then it's recommended to join the [Pop!\_OS Mattermost chat server](https://chat.pop-os.org) to receive news about the 24.04 development cycle.
+Pop!\_OS 24.04 Beta installations will be upgradable to the final 24.04 release, but some manual interventions may occasionally be required during development. If you're using Pop!\_OS 24.04 Beta, then it's recommended to join the [Pop!\_OS Mattermost chat server](https://chat.pop-os.org) to receive news about the 24.04 development cycle. Join the COSMIC Epoch channel.
 
 ### Pop!\_OS 22.04
 
