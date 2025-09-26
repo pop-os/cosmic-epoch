@@ -1,7 +1,6 @@
 # COSMIC Desktop
 
-Currently near feature complete **beta**. We're in the final bug fixing stage for the first release. Testing instructions below for various distributions.
-
+Currently in **beta** for Epoch 1 (the first release), which is nearly feature-complete and in the final bug fixing stage. Testing instructions for various distributions are below.
 
 ## Components of COSMIC Desktop
 * [cosmic-applets](https://github.com/pop-os/cosmic-applets)
@@ -41,93 +40,6 @@ Currently near feature complete **beta**. We're in the final bug fixing stage fo
 ### COSMIC toolkit for apps and applets
 
 * [libcosmic](https://github.com/pop-os/libcosmic)
-
-## Setup on distributions without packaging of cosmic components
-
-The COSMIC desktop environment requires a few dependencies:
-(This list does not try to be exhaustive, but rather tries to provide a decent starting point. For detailed instructions, check out the individual projects):
-
-- [just](https://github.com/casey/just)
-- rustc
-- libwayland
-- mesa (or third-party libEGL/libGL implementations, though interfacing with mesa's libglvnd is generally recommended).
-- libseat
-- libxkbcommon
-- libinput
-- udev
-- dbus
-
-optionally (though the build-system might currently require these libraries):
-- libsystem
-- libpulse
-- pop-launcher
-- libexpat1
-- libfontconfig
-- libfreetype
-- lld
-- cargo
-- libgbm-dev
-- libclang-dev
-- libpipewire-0.3-dev
-
-Note: `libfontconfig`, `libfreetype`, and `lld` are packages specific to Linux distributions. You may need to find the equivalent version for your distribution if you are not using Pop!_OS.
-
-The required ones can be installed with:
-```
-sudo apt install just rustc libglvnd-dev libwayland-dev libseat-dev libxkbcommon-dev libinput-dev udev dbus libdbus-1-dev libpam0g-dev libpixman-1-dev libssl-dev libflatpak-dev -y
-```
-
-and the optional ones with:
-```
-sudo apt install libsystemd-dev libpulse-dev pop-launcher libexpat1-dev libfontconfig-dev libfreetype-dev mold cargo libgbm-dev libclang-dev libpipewire-0.3-dev -y
-```
-
-They can be installed all at once with:
-```
-sudo apt install just rustc libglvnd-dev libwayland-dev libseat-dev libxkbcommon-dev libinput-dev udev dbus libdbus-1-dev libsystemd-dev libpixman-1-dev libssl-dev libflatpak-dev libpulse-dev pop-launcher libexpat1-dev libfontconfig-dev libfreetype-dev mold cargo libgbm-dev libclang-dev libpipewire-0.3-dev libpam0g-dev -y
-```
-
-### Testing
-
-The easiest way to test COSMIC DE currently is by building a systemd system extension (see `man systemd-sysext`).
-
-```
-git clone --recurse-submodules https://github.com/pop-os/cosmic-epoch
-cd cosmic-epoch
-just sysext
-```
-
-This will create a system-extension called `cosmic-sysext`, that you can move (without renaming!) into e.g. `/var/lib/extensions`.
-After starting systemd-sysext.service (`sudo systemctl enable --now systemd-sysext`) and refreshing (`sudo systemd-sysext refresh`) or rebooting,
-*COSMIC* will be an available option in your favorite display manager.
-
-If you have SELinux enabled (e.g. on Fedora), the installed extension won't have the correct labels applied.
-To test COSMIC, you can temporarily disable it and restart `gdm` (note that this will close your running programs).
-
-```shell
-sudo setenforce 0
-sudo systemctl restart gdm
-```
-
-**Note**: An extension created this way will be linked against specific libraries on your system and will not work on other distributions.
-It also requires the previously mentioned libraries/dependencies at runtime to be installed in your system (the system extension does not carry these libraries).
-
-**Read-Only Filesystem**: If you're not on an immutable distro you may notice that `/usr/` and `/opt/` are read-only.
-this is caused by `systemd-sysext` being enabled, when you are done testing you can disable `systemd-sysext` (`sudo systemctl disable --now systemd-sysext`)
-
-It is thus no proper method for long term deployment.
-
-### Packaging
-
-COSMIC DE is packaged for Pop!_OS. For reference, look at the `debian` folders in the projects repositories.
-These and the `justfile` inside this repository may be used as references on how to package COSMIC DE, though no backwards-compatibility guarantees are provided at this stage.
-
-### Versioning
-
-COSMIC DE is very much still work-in-progress and thus does not follow a versioning scheme so far.
-We do our best to keep the referenced submodule commits in this repository building and working together, as a consequence they might not contain the latest updates and features from these repositories (yet).
-
-Notes on versioning and packaging all these components together properly will be added at a later stage once COSMIC DE gets its first release.
 
 ## Installing on Pop!\_OS
 
@@ -254,6 +166,96 @@ Next, install the COSMIC desktop environment and its associated themes:
 
 Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
 For further information, you may check the [Gentoo Wiki](https://wiki.gentoo.org/wiki/COSMIC) or [Overlay Repository](https://github.com/fsvm88/cosmic-overlay).
+
+## Setup on distributions without packaging of COSMIC components
+
+The COSMIC desktop environment requires a few dependencies:
+(This list does not try to be exhaustive, but rather tries to provide a decent starting point. For detailed instructions, check out the individual projects):
+
+- [just](https://github.com/casey/just)
+- rustc
+- libwayland
+- mesa (or third-party libEGL/libGL implementations, though interfacing with mesa's libglvnd is generally recommended).
+- libseat
+- libxkbcommon
+- libinput
+- udev
+- dbus
+
+optionally (though the build-system might currently require these libraries):
+- libsystem
+- libpulse
+- pop-launcher
+- libexpat1
+- libfontconfig
+- libfreetype
+- lld
+- cargo
+- libgbm-dev
+- libclang-dev
+- libpipewire-0.3-dev
+
+Note: `libfontconfig`, `libfreetype`, and `lld` are packages specific to Linux distributions. You may need to find the equivalent version for your distribution if you are not using Pop!_OS.
+
+The required ones can be installed with:
+```
+sudo apt install just rustc libglvnd-dev libwayland-dev libseat-dev libxkbcommon-dev libinput-dev udev dbus libdbus-1-dev libpam0g-dev libpixman-1-dev libssl-dev libflatpak-dev -y
+```
+
+and the optional ones with:
+```
+sudo apt install libsystemd-dev libpulse-dev pop-launcher libexpat1-dev libfontconfig-dev libfreetype-dev mold cargo libgbm-dev libclang-dev libpipewire-0.3-dev -y
+```
+
+They can be installed all at once with:
+```
+sudo apt install just rustc libglvnd-dev libwayland-dev libseat-dev libxkbcommon-dev libinput-dev udev dbus libdbus-1-dev libsystemd-dev libpixman-1-dev libssl-dev libflatpak-dev libpulse-dev pop-launcher libexpat1-dev libfontconfig-dev libfreetype-dev mold cargo libgbm-dev libclang-dev libpipewire-0.3-dev libpam0g-dev -y
+```
+
+### Testing
+
+The easiest way to test COSMIC DE currently is by building a systemd system extension (see `man systemd-sysext`).
+
+```
+git clone --recurse-submodules https://github.com/pop-os/cosmic-epoch
+cd cosmic-epoch
+just sysext
+```
+
+This will create a system-extension called `cosmic-sysext`, which you can move (without renaming!) into e.g. `/var/lib/extensions`.
+After starting systemd-sysext.service (`sudo systemctl enable --now systemd-sysext`) and refreshing (`sudo systemd-sysext refresh`) or rebooting,
+COSMIC will be an available option in your favorite display manager.
+
+If you have SELinux enabled (e.g. on Fedora), the installed extension won't have the correct labels applied.
+To test COSMIC, you can temporarily disable it and restart `gdm` (note that this will close your running programs).
+
+```shell
+sudo setenforce 0
+sudo systemctl restart gdm
+```
+
+**Note**: An extension created this way will be linked against specific libraries on your system and will not work on other distributions.
+It also requires the previously mentioned libraries/dependencies at runtime to be installed in your system (the system extension does not carry these libraries).
+
+**Read-Only Filesystem**: If you're not on an immutable distro you may notice that `/usr/` and `/opt/` are read-only.
+this is caused by `systemd-sysext` being enabled, when you are done testing you can disable `systemd-sysext` (`sudo systemctl disable --now systemd-sysext`)
+
+It is thus not a proper method for long term deployment.
+
+### Packaging
+
+COSMIC DE is packaged for Pop!_OS. For reference, look at the `debian` folders in the projects repositories.
+These and the `justfile` inside this repository may be used as references on how to package COSMIC DE, though no backwards-compatibility guarantees are provided at this stage.
+
+### Versioning
+
+COSMIC DE is still a work-in-progress and thus does not follow a versioning scheme yet.
+We do our best to keep the referenced submodule commits in this repository building and working together; as a consequence, they might not contain the latest updates and features from these repositories (yet).
+The commits corresponding with the current beta release are tagged `epoch-1.0.0-beta.X.Y`, where `X` is the beta release and `Y` is the minor release.
+
+## Translating
+
+To submit translations for COSMIC in your language, please use Weblate: https://hosted.weblate.org/projects/pop-os/ 
 
 ## Contact
 - [Mattermost](https://chat.pop-os.org/)
