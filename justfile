@@ -50,12 +50,12 @@ install rootdir="" prefix="/usr/local": build
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-screenshot/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-settings/install
     {{ make }} -C cosmic-settings-daemon install DESTDIR={{rootdir}} prefix={{prefix}}
-    {{ just }} rootdir={{rootdir}} prefix={{rootdir + prefix}} cosmic-session/install
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-session/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-store/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-term/install
     {{ make }} -C cosmic-wallpapers install DESTDIR={{rootdir}} prefix={{prefix}}
     {{ make }} -C cosmic-workspaces-epoch install DESTDIR={{rootdir}} prefix={{prefix}}
-    {{ just }} rootdir={{rootdir}} prefix={{prefix}} pop-launcher/install
+    {{ just }} rootdir={{rootdir}} pop-launcher/install
     {{ make }} -C xdg-desktop-portal-cosmic install DESTDIR={{rootdir}} prefix={{prefix}}
 
 _mkdir dir:
