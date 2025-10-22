@@ -34,8 +34,8 @@ https://gitlab.freedesktop.org/wlroots/wlroots/-/wikis/DRM-Debugging documents h
 
 ## Frozen desktop
 
-If the desktop is frozen and `ctrl+alt+f*` don't work to change to a TTY, [the magic SysRq key](https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html) with `r` can be used to swich input in raw mode, so the kernel will handle the tty switch key binding. /etc/sysctl.conf` or `/etc/sysctl.d` may need to be edited first to set `kernel.sysrq=1` or another value that allows this command.
+If the desktop is frozen and `ctrl+alt+f*` don't work to change to a TTY, [the magic SysRq key](https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html) with `r` can be used to switch input into raw mode, so the kernel will handle the tty switch key binding. `/etc/sysctl.conf` or `/etc/sysctl.d` may need to be edited first to set `kernel.sysrq=1` or another value that allows this command.
 
 It is also possible to connect over `ssh` from another computer.
 
-Then `pidof cosmic-comp` can be used to get the PID of the compositor. Then it is possible to investigate further with tools like `gdb`, using `sudo gdb` then `attach <pid>`.
+Then `pidof cosmic-comp` can be used to get the PID of the compositor. Then it is possible to investigate further with tools like `gdb`, using `sudo gdb` and then `attach <pid>`.
