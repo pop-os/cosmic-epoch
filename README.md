@@ -138,18 +138,19 @@ For more information, check the [Fedora Wiki COSMIC SIG page](https://fedoraproj
 The COSMIC module on NixOS can be enabled by adding the following lines to
 your NixOS configuration file (`configuration.nix` or in your Flake):
 ```nix
-  # Enable the login manager
+{
+  # Enable the COSMIC login manager
   services.displayManager.cosmic-greeter.enable = true;
-  # Enable the COSMIC DE itself
+
+  # Enable the COSMIC desktop environment
   services.desktopManager.cosmic.enable = true;
-  # Enable XWayland support in COSMIC
-  services.desktopManager.cosmic.xwayland.enable = true;
+}
 ```
 
 While some packages like `cosmic-session` might be present in prior versions,
 the modules that add full support for COSMIC were added in **NixOS 25.05**.
 
-You can find more details in the [NixOS 25.05 release notes](https://nixos.org/manual/nixos/unstable/release-notes#sec-release-25.05).
+You can find more details on the [NixOS Wiki](https://wiki.nixos.org/wiki/COSMIC).
 
 
 ## Installing on openSUSE tumbleweed
