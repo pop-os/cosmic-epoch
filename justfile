@@ -15,7 +15,7 @@ build:
     {{ just }} cosmic-initial-setup/build-release
     {{ just }} cosmic-launcher/build-release
     {{ just }} cosmic-notifications/build-release
-    {{ make }} -C cosmic-osd all
+    {{ just }} cosmic-osd/build-release
     {{ just }} cosmic-panel/build-release
     {{ just }} cosmic-player/build-release
     {{ just }} cosmic-randr/build-release
@@ -43,7 +43,7 @@ install rootdir="" prefix="/usr/local": build
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-initial-setup/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-launcher/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-notifications/install
-    {{ make }} -C cosmic-osd install DESTDIR={{rootdir}} prefix={{prefix}}
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-osd/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-panel/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-player/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-randr/install
