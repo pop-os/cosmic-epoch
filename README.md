@@ -176,11 +176,15 @@ For further information, you may check the [Gentoo Wiki](https://wiki.gentoo.org
 
 ## Setup on distributions without packaging of COSMIC components
 
-The COSMIC desktop environment requires a few dependencies:
+The COSMIC desktop environment requires a few dependencies. The rustc and just packages of your distro may be too old, so we recommend installing rustc and cargo with rustup, and installing just with cargo.
 (This list does not try to be exhaustive, but rather tries to provide a decent starting point. For detailed instructions, check out the individual projects):
 
 - [just](https://github.com/casey/just)
 - rustc
+- cargo
+- c compiler (cc)
+- make
+- git
 - libwayland
 - mesa (or third-party libEGL/libGL implementations, though interfacing with mesa's libglvnd is generally recommended).
 - libseat
@@ -188,16 +192,17 @@ The COSMIC desktop environment requires a few dependencies:
 - libinput
 - udev
 - dbus
+- libdisplay-info-dev
+- libgstreamer1.0-dev
+- libgstreamer-plugins-base1.0-dev
 
 optionally (though the build-system might currently require these libraries):
 - libsystem
 - libpulse
-- pop-launcher
 - libexpat1
 - libfontconfig
 - libfreetype
 - lld
-- cargo
 - libgbm-dev
 - libclang-dev
 - libpipewire-0.3-dev
@@ -207,11 +212,15 @@ Note: `libfontconfig`, `libfreetype`, and `lld` are packages specific to Linux d
 The required ones can be installed with:
 ```
 sudo apt install -y \
+  build-essential \
   dbus \
-  just \
+  git \
   libdbus-1-dev \
+  libdisplay-info-dev \
   libflatpak-dev \
   libglvnd-dev \
+  libgstreamer-plugins-base1.0-dev \
+  libgstreamer1.0-dev \
   libinput-dev \
   libpam0g-dev \
   libpixman-1-dev \
@@ -219,14 +228,16 @@ sudo apt install -y \
   libssl-dev \
   libwayland-dev \
   libxkbcommon-dev \
-  rustc \
+  rustup \
   udev
+
+rustup toolchain install stable
+cargo install just
 ```
 
 and the optional ones with:
 ```
 sudo apt install -y \
-  cargo \
   libclang-dev \
   libexpat1-dev \
   libfontconfig-dev \
@@ -235,24 +246,27 @@ sudo apt install -y \
   libpipewire-0.3-dev \
   libpulse-dev \
   libsystemd-dev \
-  mold \
-  pop-launcher
+  lld \
+  mold
 ```
 
 They can be installed all at once with:
 ```
 sudo apt install -y \
-  cargo \
+  build-essential \
   dbus \
-  just \
+  git \
   libclang-dev \
   libdbus-1-dev \
+  libdisplay-info-dev \
   libexpat1-dev \
   libflatpak-dev \
   libfontconfig-dev \
   libfreetype-dev \
   libgbm-dev \
   libglvnd-dev \
+  libgstreamer-plugins-base1.0-dev \
+  libgstreamer1.0-dev \
   libinput-dev \
   libpam0g-dev \
   libpipewire-0.3-dev \
@@ -263,10 +277,13 @@ sudo apt install -y \
   libsystemd-dev \
   libwayland-dev \
   libxkbcommon-dev \
+  lld \
   mold \
-  pop-launcher \
-  rustc \
+  rustup \
   udev
+
+rustup toolchain install stable
+cargo install just
 ```
 
 ### Testing
