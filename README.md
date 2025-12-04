@@ -206,7 +206,7 @@ Note: `libfontconfig`, `libfreetype`, and `lld` are packages specific to Linux d
 
 The required ones can be installed with:
 ```
-sudo apt install just rustc libglvnd-dev libwayland-dev libseat-dev libxkbcommon-dev libinput-dev udev dbus libdbus-1-dev libpam0g-dev libpixman-1-dev libssl-dev libflatpak-dev -y
+sudo apt install just rustc libglvnd-dev libwayland-dev libseat-dev libxkbcommon-dev libinput-dev udev dbus libdbus-1-dev libpam0g-dev libpixman-1-dev libssl-dev libflatpak-dev git-lfs -y
 ```
 
 and the optional ones with:
