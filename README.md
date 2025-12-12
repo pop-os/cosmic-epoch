@@ -1,7 +1,5 @@
 # COSMIC Desktop
 
-Currently in **beta** for Epoch 1 (the first release), which is nearly feature-complete and in the final bug fixing stage. Testing instructions for various distributions are below.
-
 ## Components of COSMIC Desktop
 * [cosmic-applets](https://github.com/pop-os/cosmic-applets)
 * [cosmic-applibrary](https://github.com/pop-os/cosmic-applibrary)
