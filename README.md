@@ -1,6 +1,6 @@
 # COSMIC Desktop
 
-Currently in **beta** for Epoch 1 (the first release), which is nearly feature-complete and in the final bug fixing stage. Testing instructions for various distributions are below.
+[COSMIC](https://system76.com/cosmic) is a desktop environment offering performance, efficiency, and personalization to empower a wide variety of use cases.
 
 ## Components of COSMIC Desktop
 * [cosmic-applets](https://github.com/pop-os/cosmic-applets)
