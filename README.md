@@ -1,5 +1,7 @@
 # COSMIC Desktop
 
+[COSMIC](https://system76.com/cosmic) is a desktop environment offering performance, efficiency, and personalization to empower a wide variety of use cases.
+
 ## Components of COSMIC Desktop
 * [cosmic-applets](https://github.com/pop-os/cosmic-applets)
 * [cosmic-applibrary](https://github.com/pop-os/cosmic-applibrary)
