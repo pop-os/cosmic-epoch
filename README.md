@@ -43,17 +43,15 @@
 
 ## Installing on Pop!\_OS
 
-COSMIC DE is in its first beta release. We're in a bug fixing stage of development with features largely complete for the first release. Using and testing the beta is welcome. 
+### Pop!\_OS 24.04
 
-### Pop!\_OS 24.04 Beta
+COSMIC DE's first release (Epoch 1) is included in Pop!\_OS 24.04. There are two ways to get the 24.04 release:
 
-The recommended way to test COSMIC Epoch on Pop!\_OS is by using the Pop!\_OS 24.04 LTS Beta release. There are two ways to get the 24.04 Beta:
-
-- Install it from the [latest Beta release ISO](https://system76.com/cosmic/).
+- Install it from the [latest release ISO](https://system76.com/cosmic/).
 - Upgrade an existing Pop!\_OS 22.04 installation using the following command: `pop-upgrade release upgrade -f`
     - If you experience problems during the upgrade, please open an issue in the [pop-upgrade GitHub repository](https://github.com/pop-os/upgrade) or join the [Pop!\_OS Mattermost chat server](https://chat.pop-os.org) for assistance.
 
-Pop!\_OS 24.04 Beta installations will be upgradable to the final 24.04 release, but some manual interventions may occasionally be required during development. If you're using Pop!\_OS 24.04 Beta, then it's recommended to join the [Pop!\_OS Mattermost chat server](https://chat.pop-os.org) to receive news about the 24.04 development cycle. Join the COSMIC Epoch channel.
+COSMIC users, including Pop!_OS users, are welcome to join the [Pop!\_OS Mattermost chat server](https://chat.pop-os.org) to receive news about development. Join the [COSMIC Epoch channel](https://chat.pop-os.org/pop-os/channels/cosmic-epoch) for COSMIC user discussion, or the [Development channel](https://chat.pop-os.org/pop-os/channels/development) for developer-oriented discussion.
 
 ### Pop!\_OS 22.04
 
@@ -324,9 +322,12 @@ These and the `justfile` inside this repository may be used as references on how
 
 ### Versioning
 
-COSMIC DE is still a work-in-progress and thus does not follow a versioning scheme yet.
+COSMIC DE is a work in progress with many moving pieces.
 We do our best to keep the referenced submodule commits in this repository building and working together; as a consequence, they might not contain the latest updates and features from these repositories (yet).
-The commits corresponding with the current beta release are tagged `epoch-1.0.0-beta.X.Y`, where `X` is the beta release and `Y` is the minor release.
+
+The commits corresponding with the current release are tagged `epoch-X.Y.Z`, where `X` is the major release and the last two numbers denote incremental minor releases. (During development of new major versions, an additional `-alpha.Y.Z` or `-beta.Y.Z` may be appended.)
+
+COSMIC Epoch version numbers are mainly for the benefit of non-Pop!_OS distributions; Pop!_OS uses its own build system, and typically receives updates to individual submodules before they're tagged as part of a COSMIC Epoch release.
 
 ## Translating
 
