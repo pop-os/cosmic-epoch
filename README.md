@@ -164,13 +164,18 @@ For further information, you may check the [OBS page](https://build.opensuse.org
 ## Installing on Gentoo Linux
 COSMIC can be installed on Gentoo via a custom overlay. Add the overlay using your preferred overlay manager (such as eselect), and then install the desktop environment:
 
-`eselect repository add cosmic-overlay git https://github.com/fsvm88/cosmic-overlay.git`
+`eselect repository add	cosmic-overlay git https://github.com/fsvm88/cosmic-overlay.git`
 
-Next, install the COSMIC desktop environment and its associated themes:
+Next, synchronize the repository with
+`emaint sync -r cosmic-overlay`
 
-`emerge cosmic-meta pop-theme-meta`
+and install the COSMIC desktop environment and its associated themes:
 
-Then log out, click on your user, and a sprocket at the bottom right shows an additional entry alongside your desktop environments. Change to COSMIC and proceed with log in.
+`emerge cosmic-meta pop-theme-meta -av`
+
+Please note that the ebuilds have testing keywords and need to unmasked on stable systems for successful installation.
+
+Then log out, and switch the desktop environment to COSMIC, the procedure depends on your login manager.
 For further information, you may check the [Gentoo Wiki](https://wiki.gentoo.org/wiki/COSMIC) or [Overlay Repository](https://github.com/fsvm88/cosmic-overlay).
 
 ## Setup on distributions without packaging of COSMIC components
