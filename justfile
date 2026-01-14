@@ -22,7 +22,7 @@ build:
     {{ just }} cosmic-screenshot/build-release
     {{ just }} cosmic-settings/build-release
     {{ make }} -C cosmic-settings-daemon all
-    {{ just }} cosmic-session/all
+    {{ just }} cosmic-session/build-release
     {{ just }} cosmic-store/build-release
     {{ just }} cosmic-term/build-release
     {{ make }} -C cosmic-wallpapers all
