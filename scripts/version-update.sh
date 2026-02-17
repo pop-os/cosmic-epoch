@@ -11,6 +11,9 @@ repos=(
     cosmic-edit
     cosmic-files
     cosmic-player
+    cosmic-settings
+    cosmic-settings-daemon
+    cosmic-randr
     cosmic-store
     cosmic-term
 )
