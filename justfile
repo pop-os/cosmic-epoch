@@ -12,7 +12,7 @@ build:
     {{ just }} cosmic-files/build-release
     {{ just }} cosmic-greeter/build-release
     {{ just }} cosmic-idle/build-release
-    {{ just }} cosmic-initial-setup/build-release
+    {{ just }} cosmic-initial-setup/default
     {{ just }} cosmic-launcher/build-release
     {{ just }} cosmic-notifications/build-release
     {{ just }} cosmic-osd/build-release
