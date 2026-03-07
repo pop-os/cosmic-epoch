@@ -28,7 +28,7 @@
     branch = master
 [submodule "cosmic-settings"]
     path = cosmic-settings
-    url = https://github.com/pop-os/cosmic-settings
+	url = https://github.com/nurazharSG/cosmic-settings.git
     branch = master
 [submodule "cosmic-settings-daemon"]
     path = cosmic-settings-daemon
