@@ -2,13 +2,14 @@
 
 set -e
 
-TAG="$1"
-
-if [ -z "$TAG" ]
+if [ -z "$1" ]
 then
-    echo "$0 [tag]" >&2
+    echo "$0 [epoch version]" >&2
     exit 1
 fi
+
+VERSION="$1"
+TAG="epoch-$1"
 
 echo "Do you want to tag the current state of cosmic-epoch with the tag $TAG? (y/N)"
 read answer
@@ -22,8 +23,8 @@ set -x
 
 git fetch --recurse-submodules
 
-git tag --force "$TAG"
-git submodule foreach git tag --force "$TAG"
+git tag --force --annotate "$TAG" --message "Epoch ${VERSION}"
+git submodule foreach git tag --force --annotate "$TAG" --message "Epoch ${VERSION}"
 
 git push --force origin tag "$TAG"
 git submodule foreach git push --force origin tag "$TAG"

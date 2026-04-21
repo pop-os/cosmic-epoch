@@ -17,13 +17,12 @@ jobs:
   Test:
     runs-on: ubuntu-latest
     container:
-      image: archlinux:latest
+      image: archlinux:base-devel
       volumes:
         - /:/host
     steps:
     - run: >
-        pacman --noconfirm -Syu
-        base-devel
+        pacman --noconfirm --needed -Syu
         cargo
         clang
         desktop-file-utils
@@ -31,6 +30,7 @@ jobs:
         gtk3
         gtk4
         just
+        libdisplay-info
         libinput
         libxkbcommon
         llvm
@@ -47,7 +47,7 @@ jobs:
         flatpak
         nasm
     - run: rm -rf /host/usr/local/lib/android # Free space
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
       with:
         submodules: recursive
     # Safe directory behavior seems to have issues with `container:`
