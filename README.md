@@ -261,6 +261,7 @@ sudo apt install -y \
   build-essential \
   dbus \
   git \
+  git-lfs \
   libclang-dev \
   libdbus-1-dev \
   libdisplay-info-dev \
