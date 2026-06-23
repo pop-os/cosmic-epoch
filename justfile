@@ -14,6 +14,7 @@ build:
     {{ just }} cosmic-idle/build-release
     {{ just }} cosmic-initial-setup/build-release
     {{ just }} cosmic-launcher/build-release
+    {{ just }} cosmic-monitor/build-release
     {{ just }} cosmic-notifications/build-release
     {{ just }} cosmic-osd/build-release
     {{ just }} cosmic-panel/build-release
@@ -42,6 +43,7 @@ install rootdir="" prefix="/usr/local": build
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-idle/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-initial-setup/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-launcher/install
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-monitor/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-notifications/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-osd/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-panel/install
@@ -84,6 +86,7 @@ clean:
     {{ just }} cosmic-idle/clean
     {{ just }} cosmic-initial-setup/clean
     rm -rf cosmic-launcher/target
+    {{ just }} cosmic-monitor/clean
     rm -rf cosmic-panel/target
     rm -rf cosmic-player/target
     rm -rf cosmic-notifications/target

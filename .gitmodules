@@ -106,3 +106,7 @@
 	path = pop-launcher
 	url = https://github.com/pop-os/launcher.git
 	branch = master
+[submodule "cosmic-monitor"]
+	path = cosmic-monitor
+	url = https://github.com/pop-os/cosmic-monitor.git
+	branch = master
