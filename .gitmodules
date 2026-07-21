@@ -110,3 +110,7 @@
 	path = cosmic-monitor
 	url = https://github.com/pop-os/cosmic-monitor.git
 	branch = master
+[submodule "cosmic-sound-theme"]
+	path = cosmic-sound-theme
+	url = https://github.com/pop-os/cosmic-sound-theme.git
+	branch = master

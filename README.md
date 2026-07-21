@@ -24,6 +24,7 @@
 * [cosmic-session](https://github.com/pop-os/cosmic-session)
 * [cosmic-settings](https://github.com/pop-os/cosmic-settings)
 * [cosmic-settings-daemon](https://github.com/pop-os/cosmic-settings-daemon)
+* [cosmic-sound-theme](https://github.com/pop-os/cosmic-sound-theme)
 * [cosmic-store](https://github.com/pop-os/cosmic-store)
 * [cosmic-term](https://github.com/pop-os/cosmic-term)
 * [cosmic-theme-editor](https://github.com/pop-os/cosmic-theme-editor)
