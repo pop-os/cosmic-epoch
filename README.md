@@ -221,6 +221,7 @@ sudo apt install -y \
   build-essential \
   dbus \
   git \
+  git-lfs \
   libdbus-1-dev \
   libdisplay-info-dev \
   libflatpak-dev \
@@ -262,6 +263,7 @@ sudo apt install -y \
   build-essential \
   dbus \
   git \
+  git-lfs \
   libclang-dev \
   libdbus-1-dev \
   libdisplay-info-dev \
