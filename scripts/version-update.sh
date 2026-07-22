@@ -12,6 +12,9 @@ repos=(
     cosmic-files
     cosmic-monitor
     cosmic-player
+    cosmic-settings
+    cosmic-settings-daemon
+    cosmic-randr
     cosmic-store
     cosmic-term
 )
