@@ -35,6 +35,7 @@ repos=(
 for repo in "${repos[@]}"
 do
     git submodule update --recursive "${repo}"
+    rsync -a templates/* "${repo}"
     pushd "${repo}"
     git fetch origin
     git checkout -B epoch-update origin/master
