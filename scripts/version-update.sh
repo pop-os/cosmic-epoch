@@ -38,6 +38,7 @@ do
     git fetch origin
     git checkout -B epoch-update origin/master
     git reset --hard
+    rsync -a ../templates/* .
     if [ "$(dpkg-parsechangelog --show-field Version)" != "${version}" ]
     then
         dch --newversion "${version}" --distribution noble "${subject}"
