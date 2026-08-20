@@ -29,7 +29,6 @@ repos=(
     cosmic-settings-daemon
     cosmic-store
     cosmic-term
-    pop-launcher
 )
 
 for repo in "${repos[@]}"
