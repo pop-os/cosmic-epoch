@@ -1,6 +1,4 @@
-[private]
-default:
-    @just --justfile cargo.just --list
+cargo-target-dir := env('CARGO_TARGET_DIR', 'target')
 
 # Compile with debug profile
 [no-cd]
