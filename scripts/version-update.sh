@@ -34,11 +34,11 @@ repos=(
 for repo in "${repos[@]}"
 do
     git submodule update --recursive "${repo}"
-    rsync -a templates/* "${repo}"
     pushd "${repo}"
     git fetch origin
     git checkout -B epoch-update origin/master
     git reset --hard
+    rsync -a ../templates/* .
     if [ "$(dpkg-parsechangelog --show-field Version)" != "${version}" ]
     then
         dch --newversion "${version}" --distribution noble "${subject}"
