@@ -5,15 +5,15 @@ make := `which make`
 build:
     mkdir -p build
     {{ just }} cosmic-applets/build-release
-    {{ just }} cosmic-applibrary/build-release
+    cd cosmic-applibrary && {{ just }} build-release
     {{ just }} cosmic-bg/build-release
     {{ make }} -C cosmic-comp all
     {{ just }} cosmic-edit/build-release
     {{ just }} cosmic-files/build-release
     {{ just }} cosmic-greeter/build-release
     {{ just }} cosmic-idle/build-release
-    {{ just }} cosmic-initial-setup/build-release
-    {{ just }} cosmic-launcher/build-release
+    cd cosmic-initial-setup && {{ just }} build-release
+    cd cosmic-launcher && {{ just }} build-release
     {{ just }} cosmic-monitor/build-release
     {{ just }} cosmic-notifications/build-release
     {{ just }} cosmic-osd/build-release
@@ -22,7 +22,7 @@ build:
     {{ just }} cosmic-player/build-release
     {{ just }} cosmic-randr/build-release
     {{ just }} cosmic-screenshot/build-release
-    {{ just }} cosmic-settings/build-release
+    cd cosmic-settings && {{ just }} build-release
     {{ make }} -C cosmic-settings-daemon all
     {{ just }} cosmic-session/build-release
     {{ just }} cosmic-store/build-release
@@ -31,7 +31,7 @@ build:
     {{ make }} -C cosmic-wallpapers all
     {{ make }} -C cosmic-workspaces-epoch all
     {{ just }} pop-launcher/build-release
-    {{ make }} -C xdg-desktop-portal-cosmic all
+    cd xdg-desktop-portal-cosmic && {{ just }} debug=0
 
 install rootdir="" prefix="/usr/local": build
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-applets/install
@@ -88,7 +88,7 @@ clean:
     {{ just }} cosmic-files/clean
     rm -rf cosmic-greeter/target
     {{ just }} cosmic-idle/clean
-    {{ just }} cosmic-initial-setup/clean
+    cd cosmic-initial-setup && {{ just }} clean
     rm -rf cosmic-launcher/target
     {{ just }} cosmic-monitor/clean
     rm -rf cosmic-panel/target
