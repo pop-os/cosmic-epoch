@@ -29,6 +29,7 @@ repos=(
     cosmic-settings-daemon
     cosmic-store
     cosmic-term
+
 )
 
 for repo in "${repos[@]}"
@@ -38,13 +39,15 @@ do
     git fetch origin
     git checkout -B epoch-update origin/master
     git reset --hard
-    rsync -a ../templates/* .
+    git clean -fd
+    rsync -av ../templates/* .
     if [ "$(dpkg-parsechangelog --show-field Version)" != "${version}" ]
     then
         dch --newversion "${version}" --distribution noble "${subject}"
     fi
     cargo set-version "${version}"
     cargo update
+    git add .
     git commit -a -m "${subject}" -m "${description}"
     git push -f -u origin epoch-update
     pr_url="$(gh pr list --head epoch-update --state open --json url --jq '.[].url')"
