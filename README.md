@@ -234,7 +234,7 @@ sudo apt install -y \
   libssl-dev \
   libwayland-dev \
   libxkbcommon-dev \
-  libdav1d-dev \`
+  libdav1d-dev \
   rustup \
   udev
 
@@ -284,6 +284,7 @@ sudo apt install -y \
   libsystemd-dev \
   libwayland-dev \
   libxkbcommon-dev \
+  libdav1d-dev \
   lld \
   mold \
   rustup \
