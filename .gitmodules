@@ -114,3 +114,7 @@
 	path = cosmic-sound-theme
 	url = https://github.com/pop-os/cosmic-sound-theme.git
 	branch = master
+[submodule "cosmic-osk"]
+	path = cosmic-osk
+	url = https://github.com/pop-os/cosmic-osk
+	branch = master
