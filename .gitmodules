@@ -15,7 +15,7 @@
     url = https://github.com/pop-os/cosmic-applets
     branch = master
 [submodule "cosmic-applibrary"]
-    path = cosmic-applibrary
+	path = cosmic-app-library
     url = https://github.com/pop-os/cosmic-applibrary
     branch = master
 [submodule "cosmic-launcher"]
