@@ -17,6 +17,7 @@ build:
     {{ just }} cosmic-monitor/build-release
     {{ just }} cosmic-notifications/build-release
     {{ just }} cosmic-osd/build-release
+    {{ just }} cosmic-osk/build-release
     {{ just }} cosmic-panel/build-release
     {{ just }} cosmic-player/build-release
     {{ just }} cosmic-randr/build-release
@@ -46,6 +47,7 @@ install rootdir="" prefix="/usr/local": build
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-monitor/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-notifications/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-osd/install
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-osk/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-panel/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-player/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-randr/install
@@ -91,6 +93,7 @@ clean:
     rm -rf cosmic-player/target
     rm -rf cosmic-notifications/target
     rm -rf cosmic-osd/target
+    rm -rf cosmic-osk/target
     rm -rf cosmic-randr/target
     rm -rf cosmic-screenshot/target
     rm -rf cosmic-settings/target

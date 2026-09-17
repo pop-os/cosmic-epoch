@@ -17,6 +17,7 @@
 * [cosmic-monitor](https://github.com/pop-os/cosmic-monitor)
 * [cosmic-notifications](https://github.com/pop-os/cosmic-notifications)
 * [cosmic-osd](https://github.com/pop-os/cosmic-osd)
+* [cosmic-osk](https://github.com/pop-os/cosmic-osk)
 * [cosmic-panel](https://github.com/pop-os/cosmic-panel)
 * [cosmic-player](https://github.com/pop-os/cosmic-player)
 * [cosmic-randr](https://github.com/pop-os/cosmic-randr)
