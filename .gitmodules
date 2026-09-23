@@ -118,3 +118,7 @@
 	path = cosmic-osk
 	url = https://github.com/pop-os/cosmic-osk
 	branch = master
+[submodule "cosmic-viewer"]
+	path = cosmic-viewer
+	url = https://github.com/pop-os/cosmic-viewer.git
+	branch = master

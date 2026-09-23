@@ -29,6 +29,7 @@
 * [cosmic-store](https://github.com/pop-os/cosmic-store)
 * [cosmic-term](https://github.com/pop-os/cosmic-term)
 * [cosmic-theme-editor](https://github.com/pop-os/cosmic-theme-editor)
+* [cosmic-viewer](https://github.com/pop-os/cosmic-viewer)
 * [cosmic-workspaces-epoch](https://github.com/pop-os/cosmic-workspaces-epoch)
 * [xdg-desktop-portal-cosmic](https://github.com/pop-os/xdg-desktop-portal-cosmic)
 * [pop-launcher](https://github.com/pop-os/launcher)

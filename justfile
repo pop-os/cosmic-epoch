@@ -27,6 +27,7 @@ build:
     {{ just }} cosmic-session/build-release
     {{ just }} cosmic-store/build-release
     {{ just }} cosmic-term/build-release
+    {{ just }} cosmic-viewer/build-release
     {{ make }} -C cosmic-wallpapers all
     {{ make }} -C cosmic-workspaces-epoch all
     {{ just }} pop-launcher/build-release
@@ -57,6 +58,7 @@ install rootdir="" prefix="/usr/local": build
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-session/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-store/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-term/install
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-viewer/install
     {{ make }} -C cosmic-wallpapers install DESTDIR={{rootdir}} prefix={{prefix}}
     {{ make }} -C cosmic-workspaces-epoch install DESTDIR={{rootdir}} prefix={{prefix}}
     {{ just }} rootdir={{rootdir}} pop-launcher/install
@@ -101,6 +103,7 @@ clean:
     rm -rf cosmic-session/target
     {{ just }} cosmic-store/clean
     {{ just }} cosmic-term/clean
+    {{ just }} cosmic-viewer/clean
     {{ make }} -C cosmic-wallpapers clean
     rm -rf cosmic-workspaces-epoch/target
     {{ just }} pop-launcher/clean
