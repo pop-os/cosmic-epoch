@@ -20,7 +20,7 @@ do
     do
         mkdir -pv "$(dirname "${path}")"
         cp -v "../${path}" "${path}"
-        git add "${path}"
+        git add -f "${path}"
     done
 
     git commit -a -m "${subject}" -m "${description}"
