@@ -1,0 +1,14 @@
+# From https://github.com/mheap/require-checklist-action, license MIT
+name: Require Checklist
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: mheap/require-checklist-action@v2
+        with:
+          requireChecklist: true
