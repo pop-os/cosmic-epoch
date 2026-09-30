@@ -238,6 +238,7 @@ sudo apt install -y \
   libwayland-dev \
   libxkbcommon-dev \
   libdav1d-dev \
+  nasm \
   rustup \
   udev
 
@@ -291,6 +292,7 @@ sudo apt install -y \
   libdav1d-dev \
   lld \
   mold \
+  nasm \
   rustup \
   udev
 
