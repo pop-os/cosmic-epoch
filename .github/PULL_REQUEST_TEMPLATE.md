@@ -1,4 +1,4 @@
-Replace this text with a description of your changes, and why these changes are important. Fill in the checklist below, PRs without a completed checklist will be closed.
+Replace this text with a description of your changes, and why these changes are important. Fill in the checklist below. PRs without a completed checklist will be closed.
 
 ---
 
