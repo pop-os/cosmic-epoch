@@ -7,7 +7,7 @@ build:
     {{ just }} cosmic-applets/build-release
     cd cosmic-app-library && {{ just }} build-release
     {{ just }} cosmic-bg/build-release
-    {{ make }} -C cosmic-comp all
+    {{ just }} cosmic-comp/build-release
     {{ just }} cosmic-edit/build-release
     {{ just }} cosmic-files/build-release
     {{ just }} cosmic-greeter/build-release
@@ -23,7 +23,7 @@ build:
     {{ just }} cosmic-randr/build-release
     {{ just }} cosmic-screenshot/build-release
     cd cosmic-settings && {{ just }} build-release
-    {{ make }} -C cosmic-settings-daemon all
+    cd cosmic-settings-daemon && {{ just }} build-release
     {{ just }} cosmic-session/build-release
     {{ just }} cosmic-store/build-release
     {{ just }} cosmic-term/build-release
@@ -37,7 +37,7 @@ install rootdir="" prefix="/usr/local": build
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-applets/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-app-library/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-bg/install
-    {{ make }} -C cosmic-comp install DESTDIR={{rootdir}} prefix={{prefix}}
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-comp/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-edit/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-files/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-greeter/install
@@ -54,7 +54,7 @@ install rootdir="" prefix="/usr/local": build
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-randr/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-screenshot/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-settings/install
-    {{ make }} -C cosmic-settings-daemon install DESTDIR={{rootdir}} prefix={{prefix}}
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-settings-daemon/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-session/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-store/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-term/install
