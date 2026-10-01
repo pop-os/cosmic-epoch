@@ -24,6 +24,7 @@ jobs:
     - run: >
         pacman --noconfirm --needed -Syu
         cargo
+        cmake
         clang
         desktop-file-utils
         git
