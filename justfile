@@ -7,7 +7,7 @@ build:
     {{ just }} cosmic-applets/build-release
     cd cosmic-applibrary && {{ just }} build-release
     {{ just }} cosmic-bg/build-release
-    {{ make }} -C cosmic-comp all
+    {{ just }} cosmic-comp/build-release
     {{ just }} cosmic-edit/build-release
     {{ just }} cosmic-files/build-release
     {{ just }} cosmic-greeter/build-release
@@ -23,7 +23,7 @@ build:
     {{ just }} cosmic-randr/build-release
     {{ just }} cosmic-screenshot/build-release
     cd cosmic-settings && {{ just }} build-release
-    {{ make }} -C cosmic-settings-daemon all
+    {{ just }} cosmic-settings-daemon/build-release
     {{ just }} cosmic-session/build-release
     {{ just }} cosmic-store/build-release
     {{ just }} cosmic-term/build-release
