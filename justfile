@@ -5,7 +5,7 @@ make := `which make`
 build:
     mkdir -p build
     {{ just }} cosmic-applets/build-release
-    cd cosmic-applibrary && {{ just }} build-release
+    cd cosmic-app-library && {{ just }} build-release
     {{ just }} cosmic-bg/build-release
     {{ make }} -C cosmic-comp all
     {{ just }} cosmic-edit/build-release
@@ -35,7 +35,7 @@ build:
 
 install rootdir="" prefix="/usr/local": build
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-applets/install
-    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-applibrary/install
+    {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-app-library/install
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-bg/install
     {{ make }} -C cosmic-comp install DESTDIR={{rootdir}} prefix={{prefix}}
     {{ just }} rootdir={{rootdir}} prefix={{prefix}} cosmic-edit/install
@@ -81,7 +81,7 @@ sysext dir=(invocation_directory() / "cosmic-sysext") version=("nightly-" + `git
 clean:
     rm -rf cosmic-sysext
     rm -rf cosmic-applets/target
-    rm -rf cosmic-applibrary/target
+    rm -rf cosmic-app-library/target
     rm -rf cosmic-bg/target
     rm -rf cosmic-comp/target
     rm -rf cosmic-edit/target
